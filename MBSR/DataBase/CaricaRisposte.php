@@ -18,6 +18,8 @@ $giorno=date("Y-m-d");
             require 'Insert.php'; //chiama un programma per inserire un valore
             require 'AggiornaDataBase.php';// chiama un programma per inserire i punteggi dei test
             require 'SelezionaId.php';
+            
+            
         // inserisco Name
             $nome=$_SESSION['name'];
             $id=$_SESSION['codice'];
