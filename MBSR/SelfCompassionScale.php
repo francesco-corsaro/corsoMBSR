@@ -64,7 +64,7 @@ $compassion=array(
     </head>
     <body>
 		<h1>Scala della compassione di sé</h1>
-		<div class="orizzontale adesivo">Per favore, posiziona il cellulare in orizzontale per poter rispondere alle domande</div>
+		
     
     	<div class="istruzioni">
 			
@@ -90,27 +90,15 @@ $compassion=array(
                       <div class="riga">';
     			    for ($i = 1; $i < 6; $i++) {
     			        echo'
-                        <label class="container">
+                        <label class="container">'.$i.'
                           <input type="radio" name="compassion['.$chiave.']" id="compassion['.$chiave.']" value="'.$i.'" '.$controllo.'>
                           <span class="checkmark"></span>
                         
-                        <div class="risp">
-			                <p> '.$i.'</p>
-			             </div>
+                        
                         </label>
                         ';
     			    }
-    			    echo '</div>';/*
-                       <div class="riga">';
-    			    for ($i = 0; $i < 6;$i ++) {
-    			        echo'
-			             <div class="risp">
-			                 '.$i.'
-			             </div>
-                        ';
-    			    }
-    			    echo '</div>
-                    ';*/
+    			    echo '</div>';
     			}
     			?>
     			<input type="submit" class="btn" id="myBtn" value="Invia"/>

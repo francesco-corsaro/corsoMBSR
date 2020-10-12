@@ -1,28 +1,36 @@
 .riga{
 width:100%;
 display:block;
-margin-top:3%;
+
+
 }
 
 /* The container */
 .container {
-  display: inline-block;
-  width:5%;
-  height:70px;
+  display: inline;
   position: relative;
- margin-left:3%;
-  margin-bottom: 12px;
+  padding-left: 30px;
+  padding-right:5px;
+  padding-bottom:35px;
+  margin-bottom: 31%;
   cursor: pointer;
-  
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+@media only screen and (min-width: 760px) {
+.container {
+	font-size: 20px;
+	padding-left: 35px;
+	padding-right:15px;
+}
+}
 .risp{
   display: block;
   width:5%;
-  position: absolut;
+  position: absolute;
   bottom:0;
   left:0;
   text-align:center;
@@ -45,12 +53,12 @@ margin-top:3%;
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: -16px;
-  left: -10px;
+  top: 0;
+  left: 0;
   
   height: 30px;
   width: 30px;
-  margin:20px;
+  
   background-color: #72B5A7;
   border-radius: 50%;
   border:3px solid #73A9C2;

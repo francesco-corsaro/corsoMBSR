@@ -55,10 +55,10 @@
   width: 50%;
   margin-left:25%;
   margin-right:25%;
-  margin-bottom:10%;
+  margin-top:15%;
   opacity: 0.9;
   border-radius:25px;
-   font-size: 1em;
+   font-size: 1.2em;
 }
 @media only screen and (min-width: 760px) {
 	.btn {

@@ -37,8 +37,8 @@ h1{
 
 .tenda {
     	width: 80%;
-    	margin-left:10%;
-    	margin-right:10%;
+    	margin-left:auto;
+    	margin-right:auto;
     	margin-bottom:10%;
     	padding:5% 7%;
     	   	
@@ -51,8 +51,30 @@ h1{
 @media only screen and (min-width: 760px) {
 .tenda {
         width: 70%;
-        margin-left:15%;
-        margin-right:15%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:5%;
+        padding:2% 4%;
+        
+        
+       
+}
+}
+@media only screen and (min-width: 992px) {
+.tenda {
+        width: 50%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:5%;
+        padding:2% 4%;
+       
+}
+}
+@media only screen and (min-width: 1200px) {
+.tenda {
+        width: 40%;
+        margin-left:auto;
+        margin-right:auto;
         margin-bottom:5%;
         padding:2% 4%;
        
@@ -70,6 +92,16 @@ h1{
     	border-radius:25px;
         box-shadow: 0px 0px 7px 3px #74BAAE;
      }
+@media only screen and (min-width: 760px) {
+  .vig{
+ 
+  padding-top: 0;
+  padding-right: 4%;
+  padding-left: 4%%;
+  padding-bottom: 4%;
+  
+  }
+}
 .penn{
         background-color:#F7FBFE;
     	
@@ -86,7 +118,8 @@ h1{
     display:inline-block;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom:10%;
+    margin-bottom:4%;
+    margin-top:15%;
     width:100%;
     
     color:#5D8BAE;
@@ -100,6 +133,8 @@ h1{
     margin-left:5%;
     margin-right:5%;
     margin-bottom:2%;
+    
+    font-size:1.6em;
     
  }
  } 
@@ -128,6 +163,25 @@ margin-bottom:2%;
 @media only screen and (min-width: 760px) {
 .istruzioni{
     width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:2%;
+    font-size:1.6em;
+    
+ }
+ } 
+ @media only screen and (min-width: 992px) {
+.istruzioni{
+    width:55%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:2%;
+    
+ }
+ } 
+ @media only screen and (min-width: 1200px) {
+.istruzioni{
+    width:45%;
     margin-left:5%;
     margin-right:5%;
     margin-bottom:2%;
