@@ -12,6 +12,7 @@ function Associa_Id($nome) {
             if ($row["Name"]==$nome) {
                 global $id;
                 $id= $row["id"]  ;
+                
             }
             
         }

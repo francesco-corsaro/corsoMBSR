@@ -8,16 +8,30 @@ if (!empty($_POST[nome])){
     test_input_pwd($_POST[pwd1], $_POST[pwd2]);
     test_input_info( $_POST[eta], 18, 99);
     
+    
+    
 }
 
-// Inserimetno dati puliti nel database
+// Verifica se il contatto email è già stato inserito e Inserisce dati puliti nel database
 require 'backend/DataBase/InsertRegistrazione.php';
 if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat && $infoStato!=0) {
+    
+    require 'DataBase/VerificaDoppi.php'; //chiama la seguente funzione
+    check_doble ('Anagrafica', 'Email', $email); 
+    
+    if ($checkDoble===1) {
+        $_SESSION['emailDoble']="Username  gia registrato nel database.";
+        header("location: /MBSR/Login.php");
+    }else {
+        Inserisci_id(Anagrafica, $email, $nome, $cognome, $_POST[genere], $_POST[eta], $hash);
+        echo $stato;
+        header("location: /MBSR/Login.php");
+        
+    }
+    
  
-    Inserisci_id(Anagrafica, $email, $nome, $cognome, $_POST[genere], $_POST[eta], $hash);
- echo $stato;
- header("location: /MBSR/Login.php");
- }
+ } 
+  
 ?>
 <html>
     <head>
