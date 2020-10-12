@@ -241,7 +241,7 @@ display: none;
 }
 .scala{
  display:block;
- width:75%;
+ width:100%;
  margin-left:auto;
  margin-right:auto;
  }
@@ -255,13 +255,17 @@ display: none;
 .scala .punto{
   border: none;
   
-  padding: 15px 15px;
+  padding: 15px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   
   
   float: left;
+}
+.punto{
+    width:20%;
+    display: inline;
 }
 
 /*impostazioni check box*/

@@ -91,7 +91,7 @@ $compassion=array(
     			    for ($i = 1; $i < 6; $i++) {
     			        echo'
                         <label class="container">
-                          <input type="radio" name="hoc['.$chiave.']" id="hoc['.$chiave.']['.$i.']" value="'.$i.'" '.$controllo.'>
+                          <input type="radio" name="compassion['.$chiave.']" id="compassion['.$chiave.']" value="'.$i.'" '.$controllo.'>
                           <span class="checkmark"></span>
                         
                         <div class="risp">
