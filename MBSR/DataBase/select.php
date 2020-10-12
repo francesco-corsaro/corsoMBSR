@@ -1,32 +1,36 @@
 <?php
-function select_val($posizione, $posizione2) {
+function select_val($tabel, $column,$target,$column2, $target2) {
     
     $giorno=date("Y-m-d");
     
     require 'ConnectDataBase.php';
     
-    $sql = "SELECT  *  FROM Compassion ";
+    $sql = "SELECT * FROM ".$tabel." WHERE $column = '$target' AND $column2 = '$target2'  ";
+    
+    $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-         /*   if ($row['Id']==$posizione && $row['Giorno']==$posizione2) {
-                echo $row['Progressivo'];
+            global $progressivo;
+            $progressivo=$row['Progressivo'];
+            /*if ($row['Id']==$posizione && $row['Giorno']==$posizione2) {
+              echo $row['Progressivo']."<br>";
             }else {echo 'non si trova';}
+            */
+           
             
-           */ 
-            
-            echo $row['Progressivo'];
+           
         }
     } else {
         echo "0 results";
     }
-    echo "<br>Error updating record: " . $conn->error.'<br>';
+    
     $conn->close();
 
 };
 
 
-select_val('4','2020-10-09');
-
+select_val('Compassion','Id',1,'Giorno','2020-10-09');
+echo $progressivo;
 ?>  
