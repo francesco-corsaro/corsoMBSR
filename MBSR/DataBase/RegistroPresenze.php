@@ -42,11 +42,14 @@ th, td { width: 20%; border-color: #000000;}
 <tbody>
 <?php 
 require 'ConnectDataBase.php';
-$sql = "SELECT Id, Nome, Cognome, data FROM Anagrafica";
+$sql = "SELECT Id, Nome, Cognome, data FROM Anagrafica ORDER BY Cognome";
 $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
         $identif=$row['Id'];
+        if ($identif!=1) {
+            
+        
         echo "<tr>
                 <td>".$row['Id']."</td>
                 <td>".$row['Nome']."</td>
@@ -55,11 +58,19 @@ if ($result->num_rows > 0){
                 <td>".$pretest[$identif]."</td>
                 
                </tr>";
+        }
     }
 }
 
 ?>
-
+<tr>
+                <td><b>TOT</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><?php echo (count($pretest)-2); ?></td>
+                
+</tr>
 </tbody>
 </table>
 </body>
