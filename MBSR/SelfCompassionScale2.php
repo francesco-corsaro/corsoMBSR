@@ -1,6 +1,6 @@
 <?php  
 session_start();
-$volta='b1p4ss';/*
+$volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
     header("location: /MBSR/Login.php") ;
 }
@@ -8,21 +8,26 @@ if ($_SESSION['bypass']==!$volta) {
 if ($_SESSION['name']!= 'kalimero') {
     $controllo='required' ;
 }
-if ($_SESSION['name']== 'kalimero' && isset( $_POST['stay2'])){
+if ($_SESSION['name']== 'kalimero' && isset( $_POST['compassion'])){
     echo 'isset vero';
     
     //Mando alla pagina successiva
     header("location:  /MBSR/End.php") ;
 }
 
-if (array_key_exists("19",$_POST['stay2'])) {
+if (array_key_exists("25",$_POST['compassion'])) {
     //test SAty-forma2
-    $_SESSION['stay2']=array();
-    array_push($_SESSION['stay2'],$_POST['stay2']);
+    $_SESSION['compassion']=array();
+    array_push($_SESSION['compassion'],$_POST['compassion']);
+    
+    //cambio l'id e il nome
+    
+    $_SESSION['name']=$_POST['nome'];
+    $_SESSION['codice']=$_POST['id'];
     
     //Mando alla pagina successiva
     header("location: /MBSR/End.php") ;
-}*/
+}
 
 $compassion=array(
     "1. Disapprovo e sono severo/a nei confronti dei miei difetti e delle mie inadeguatezze. ",
@@ -101,6 +106,9 @@ $compassion=array(
     			    echo '</div>';
     			}
     			?>
+    			<br><br><br><br><br><br><br><br><br><br><br>
+    			<input type="text" name="nome" id="nome" placeholder="nome">
+    			<input type="text" name="id" id="id" placeholder="id">
     			<input type="submit" class="btn" id="myBtn" value="Invia"/>
     			</div>	
     		</form>
