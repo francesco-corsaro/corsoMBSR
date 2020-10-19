@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Corso mindfulness</title>
+    <title>Grafico Canvas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -70,22 +70,24 @@
 
         };
 
-        //I seguenti array devono essere ricevuti tramite ajax
-        var punteggioPre = [<?php include 'DataBase/calcoloPunteggi.php'; ?>];
-        var punteggioPost = [2.9, 4.5, 4.8, 4.2, 3.1,3.2];
-        var grafic = [
+        //I seguenti array devono essere ricevuti tramite ajax [<?php //include 'DataBase/calcoloPunteggi.php'; ?>],
+        var subScaleCompassion = {
+            punteggioPre : [2.9, 4.5, 4.8, 4.2, 3.1,3.2],
+            punteggioPost : [2.9, 4.5, 4.8, 4.2, 3.1,3.2],
+            grafic : [
             "Gentilezza verso sé",
             "Giudizio verso sé",
             "Umanità condivisa",
             "Isolamento",
             "Mindfulness",
             "Iper-identificazione"
-        ];
-        // questo no
-        var densityCanvas = document.getElementById("CompassionSubScale");
-
-        var Ffmq = new creaGrafico(punteggioPre, punteggioPost, grafic, densityCanvas);
-        Ffmq.barChart;
+            ],
+        
+            densityCanvas : document.getElementById("CompassionSubScale"),
+        };
+        
+        var drawSubScalesCompassion = new creaGrafico(subScaleCompassion.punteggioPre, subScaleCompassion.punteggioPost, subScaleCompassion.grafic, subScaleCompassion.densityCanvas);
+        drawSubScalesCompassion.barChart;
     </script>
     
 </body>
