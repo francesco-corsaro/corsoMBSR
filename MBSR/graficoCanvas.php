@@ -70,7 +70,9 @@
 
         };
 
-        //I seguenti array devono essere ricevuti tramite ajax [<?php //include 'DataBase/calcoloPunteggi.php'; ?>],
+        //I seguenti array devono essere ricevuti tramite php
+        //considerare se conviene utilizzare un oggetto o un array
+        /*
         var subScaleCompassion = {
             punteggioPre : [2.9, 4.5, 4.8, 4.2, 3.1,3.2],
             punteggioPost : [2.9, 4.5, 4.8, 4.2, 3.1,3.2],
@@ -84,10 +86,28 @@
             ],
         
             densityCanvas : document.getElementById("CompassionSubScale"),
-        };
+        };*/
         
-        var drawSubScalesCompassion = new creaGrafico(subScaleCompassion.punteggioPre, subScaleCompassion.punteggioPost, subScaleCompassion.grafic, subScaleCompassion.densityCanvas);
-        drawSubScalesCompassion.barChart;
+        
+        var subScalesCompassion = new creaGrafico(
+            [<?php include 'DataBase/calcoloPunteggi.php'; ?>],
+            [], 
+            [
+            "Gentilezza verso sé",
+            "Giudizio verso sé",
+            "Umanità condivisa",
+            "Isolamento",
+            "Mindfulness",
+            "Iper-identificazione"
+            ], 
+            document.getElementById("CompassionSubScale")
+        );
+
+        subScalesCompassion.barChart;
+
+
+        
+        
     </script>
     
 </body>
