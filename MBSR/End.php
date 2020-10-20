@@ -22,8 +22,20 @@ if ($_SESSION['bypass']==!$volta) {
 		include  'DataBase/VerificaGiorno.php';
 		if ($databaseDay==1) {
 		    echo "<p>Error: Risposte gia presenti nel database.</p>" ;
-		}else {
-		    require 'DataBase/CaricaRisposte.php';
+		} elseif ($databaseDay ==2 ){
+		    require 'DataBase/VerificaInsPost.php';
+		    if ($presentPost== 1 ) {
+		        echo "<p>Error: Risposte gia presenti nel database.</p>" ;
+		        
+		    }else {
+		        require 'DataBase/CaricaRispostePost.php'; //carica le risposte nelle postTest
+		    }
+		    
+		}
+		else {
+		    
+		    
+		    require 'DataBase/CaricaRisposte.php'; //carica le risposte nel preTest
 		   
 		}
 		

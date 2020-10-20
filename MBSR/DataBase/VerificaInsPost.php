@@ -9,27 +9,22 @@ $giorno=date("Y-m-d");
 
 require 'ConnectDataBase.php';
 
-$sql = "SELECT Id, Name, Giorno FROM Ffmq";
+$sql = "SELECT Id, Name, Giorno FROM PostFfmq";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         if ($row["Id"]==$id) {
-            if( $row["Giorno"]==$giorno) {
-        
-            global $databaseDay;
-            $databaseDay= 1  ; //il valore uno indica che sono presenti le risposte nel pretest
-            global $verificadelGiorno;
-            $verificadelGiorno=$row["Giorno"];
-            } else {
-                global $databaseDay;
-                $databaseDay= 2  ; // il valore due indica che biisogna inserire le risposte nel post test
-            }
+                    
+            global $presentPost;
+            $presentPost= 1  ; //il valore uno indica che sono presenti le risposte nel posttest
+            
+            } 
         }
         
     }
-} else {
+ else {
     $result= "0 results";
 }
 $conn->close();
