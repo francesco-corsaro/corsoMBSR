@@ -37,12 +37,27 @@
         canvas{
             border: 1px dotted #B200ED;
         }
+
+        /* style per nascondere il navbar */
+        .smart-scroll{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            }
+        .scrolled-down{
+            transform:translateY(-100%); transition: all 0.3s ease-in-out;
+            }
+        .scrolled-up{
+            transform:translateY(0); transition: all 0.3s ease-in-out;
+            }
     </style>
 </head>
 
 <body>
     <!-- Start NavBar -->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="box-shadow: 0px 0px 7px 1px #B284BE;">
+    <nav class="navbar smart-scroll  navbar-expand-md bg-dark navbar-dark" style="box-shadow: 0px 0px 7px 1px #B284BE;">
   <a class="navbar-brand order-first" href="#">Mindful</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -71,6 +86,25 @@
   </div>  
 </nav>
 <br> 
+
+<script>
+$('body').css('padding-top', $('.navbar').outerHeight() + 'px')
+
+// detect scroll top or down
+if ($('.smart-scroll').length > 0) { // check if element exists
+    var last_scroll_top = 0;
+    $(window).on('scroll', function() {
+        scroll_top = $(this).scrollTop();
+        if(scroll_top < last_scroll_top) {
+            $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
+        }
+        else {
+            $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
+        }
+        last_scroll_top = scroll_top;
+    });
+}    
+</script>
 <!-- End NavBar -->
 
 <!-- PageHeader -->
@@ -213,8 +247,8 @@
                     [<?php echo $compassion['compassioneGlob'].','.$compassion['dimensionePos'].','.$compassion['dimensioneNegat']; ?>],
                     [],
                     ["Compassione di Sè globale",
-                    "Scala bidimensionale positiva",
-                    "Scala bidimensionale negativa"],
+                    "Scala dimensioni positive",
+                    "Scala dimensioni negative"],
                     document.getElementById("Compassion")
 
                 );
@@ -224,8 +258,8 @@
                 
                 
             </script>
-    <footer class="jumbotron bg-dark ">
-        <p class="text-white mt-5 p-4">Powered by GingiPC</p>
+    <footer class="jumbotron bg-dark mt-5 p-4 ">
+        <p class="text-white ">Powered by GingiPC</p>
     </footer>
 </body>
 </html>
