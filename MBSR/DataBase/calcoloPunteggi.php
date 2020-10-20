@@ -68,17 +68,20 @@ function compassion_scoring ($tabel) {
     
 
 };
-
-
 $compassion = compassion_scoring ('Compassion');
-foreach ($compassion['sottoscale'] as $key => $value) {
-    if ($compassion['sottoscale'][$key]!= $compassion['sottoscale']['iperIdentificazione']) {
-        echo $compassion['sottoscale'][$key].',';
-    }else {
-        echo $compassion['sottoscale'][$key];
+
+
+function arraying($x){
+
+
+    foreach ($x as $key => $value) {
+        
+        echo $value.",";
+        
+        
     }
-    
 }
+
 
 /*
 echo $compassion['dimensioneNegat'].' Dimensione negativa <br>'.$compassion['dimensionePos'].' Dimensione Positiva<br>';

@@ -1,3 +1,4 @@
+<?php include 'DataBase/calcoloPunteggi.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,13 @@
         <div style="width: 700px;">
             <canvas id="CompassionSubScale" width="150px" height="100px"></canvas>
         </div>
+
+    </div>
+    <div class="container">
+    <div style="width: 700px;">
+            <canvas id="Compassion" width="150px" height="100px"></canvas>
+        </div>
+
     </div>
 
     <script>
@@ -88,9 +96,10 @@
             densityCanvas : document.getElementById("CompassionSubScale"),
         };*/
         
+
         
         var subScalesCompassion = new creaGrafico(
-            [<?php include 'DataBase/calcoloPunteggi.php'; ?>],
+            [<?php arraying($compassion['sottoscale']);?>],
             [], 
             [
             "Gentilezza verso sé",
@@ -104,6 +113,17 @@
         );
 
         subScalesCompassion.barChart;
+
+        var compassion = new creaGrafico(
+            [<?php echo $compassion['compassioneGlob'].','.$compassion['dimensionePos'].','.$compassion['dimensioneNegat']; ?>],
+            [],
+            ["Compassione di Sè globale",
+            "Scala bidimensionale positiva",
+            "Scala bidimensionale negativa"],
+            document.getElementById("Compassion")
+
+        );
+        compassion.barChart;
 
 
         
