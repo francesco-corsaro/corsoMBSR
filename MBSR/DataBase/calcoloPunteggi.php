@@ -12,6 +12,7 @@ function compassion_scoring ($tabel) {
         // output data of each row
         while($row = $result->fetch_assoc()){
             $id=$row['Id'];
+            $sample[$id]['id']=$id;
             $sample[$id]['gentilezza']=($row['Q4i5']+$row['Q4i12']+$row['Q4i19']+$row['Q4i23']+$row['Q4i26'])/5;
             $sample[$id]['giudizio']=($row['Q4i1']+$row['Q4i8']+$row['Q4i11']+$row['Q4i16']+$row['Q4i21'])/5;
             $sample[$id]['giudizioR']=((6-$row['Q4i1'])+(6-$row['Q4i8'])+(6-$row['Q4i11'])+(6-$row['Q4i16'])+(6-$row['Q4i21']))/5;
