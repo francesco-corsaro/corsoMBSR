@@ -70,6 +70,7 @@ function compassion_scoring ($tabel) {
 
 };
 $compassion = compassion_scoring ('Compassion');
+$postCompassion = compassion_scoring('PostCompassion');
 
 
 function arraying($x){
