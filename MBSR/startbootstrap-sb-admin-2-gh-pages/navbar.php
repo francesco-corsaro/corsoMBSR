@@ -86,11 +86,23 @@
         </div>
     </li>
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Charts</span>
+        </a>
+        <div id="collapsePages1" class="collapse" aria-labelledby="headingPages1" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Visualizza grafici:</h6>
+                <a class="collapse-item" href="https://mindfulquestionnaire.altervista.org/MBSR/ffmqAdmin.php">FFMQ</a>
+                <a class="collapse-item" href="https://mindfulquestionnaire.altervista.org/MBSR/pgwbiAdmin.php">PGWBI</a>
+                <a class="collapse-item" href="http://mindfulquestionnaire.altervista.org/MBSR/mspAdmni.php">MSP</a>
+                <a class="collapse-item" href="https://mindfulquestionnaire.altervista.org/MBSR/compassionAdmin.php">Compassione di Sé</a>
+                <div class="collapse-divider"></div>
+
+            </div>
+        </div>
     </li>
 
     <!-- Nav Item - Tables -->
@@ -271,7 +283,7 @@
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                        <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                        <img class="">
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

@@ -10,8 +10,8 @@
 </head>
 <body id="page-top">
 
-  <!-- Page Wrapper 
-  <div id="wrapper">-->
+  <!-- Page Wrapper -->
+  <div id="wrapper">
     <!-- begin navbar -->
     <?php require "navbar.php" ?>
 
@@ -84,8 +84,8 @@
 
     </div> <!-- End of Content Wrapper. This wraps all things out the sidebar and starts in "startbootstrap-sb-admin-2-gh-pages/navbar.php" -->
     
-  <!-- </div>
-            End of Page Wrapper -->
+   </div>
+   <!--         End of Page Wrapper -->
           
     
      <!-- Bootstrap core JavaScript-->
