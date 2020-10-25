@@ -84,10 +84,11 @@ function pgwbi_scoring ($tabel) {
 
 };
 $pgwbiScoringPre = pgwbi_scoring ('Pgwbi');
+$pgwbiScoringPost = pgwbi_scoring ('PostPgwbi');
 
-echo 'Punteggio partecipante con id 4 alla sotto scala depressione '.$pgwbiScoringPre['sample'][4]['depressione'].'<br>';
+/*echo 'Punteggio partecipante con id 4 alla sotto scala depressione '.$pgwbiScoringPre['sample'][4]['depressione'].'<br>';
 echo 'punteggio media del campione alla sottoscala describing '.$pgwbiScoringPre['sottoscale']['depressioneGlobSam'].'<br>';
-echo 'Punteggio totale del campione ' .$pgwbiScoringPre['totalPgwbiGlobSam'];
+echo 'Punteggio totale del campione ' .$pgwbiScoringPre['totalPgwbiGlobSam'];*/
 
 
 function arraying($x){

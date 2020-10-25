@@ -76,10 +76,11 @@ function ffmq_scoring ($tabel) {
 
 };
 $ffmqScoringPre = ffmq_scoring ('Ffmq');
+$ffmqScoringPost = ffmq_scoring ('PostFfmq');
 
-echo 'Punteggio partecipante con id 4 alla sotto scala describing '.$ffmqScoringPre['sample'][4]['describing'].'<br>';
+/*echo 'Punteggio partecipante con id 4 alla sotto scala describing '.$ffmqScoringPre['sample'][4]['describing'].'<br>';
 echo 'punteggio media del campione alla sottoscala describing '.$ffmqScoringPre['sottoscale']['describingGlobSam'].'<br>';
-echo 'Punteggio totale del campione ' .$ffmqScoringPre['totalFfmqGlobSam'];
+echo 'Punteggio totale del campione ' .$ffmqScoringPre['totalFfmqGlobSam'];*/
 
 
 function arraying($x){

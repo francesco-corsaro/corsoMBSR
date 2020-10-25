@@ -98,11 +98,11 @@ function msp_scoring ($tabel) {
 
 };
 $mspScoringPre = msp_scoring ('Msp');
-
-echo 'Punteggio partecipante con id 4 alla sotto scala irritabilita '.$mspScoringPre['sample'][4]['irritabilita'].'<br>';
+$mspScoringPost = msp_scoring ('PostMsp');
+/*/echo 'Punteggio partecipante con id 4 alla sotto scala irritabilita '.$mspScoringPre['sample'][4]['irritabilita'].'<br>';
 echo 'Punteggio partecipante con id 4 alla sotto scala totale '.$mspScoringPre['sample'][4]['totalMsp'].'<br>';
 echo 'punteggio media del campione alla sottoscala irritabilita '.$mspScoringPre['sottoscale']['irritabilitaGlobSam'].'<br>';
-echo 'Punteggio totale del campione ' .$mspScoringPre['totalMspGlobSam'];
+echo 'Punteggio totale del campione ' .$mspScoringPre['totalMspGlobSam'];*/
 
 
 function arraying($x){

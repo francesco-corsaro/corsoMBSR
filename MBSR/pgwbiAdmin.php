@@ -1,28 +1,28 @@
 <?php
 
 //include a progragram to get scoring of the test
-include 'DataBase/calcoloPunteggi.php' ; // !!! MODIFY !!!
+include 'DataBase/pgwbi_scoring.php' ; // !!! MODIFY !!!
 
 require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that sets tag html to build a barchart
 
 //Title page of head
-$titlePage="Titolo Pagina"; // !!! MODIFY !!!
+$titlePage="PGWBI scoring"; // !!! MODIFY !!!
 
 //Title page of body in Page heading
-$titleBodyPage= "Titolo pagina"; // !!! MODIFY !!!
+$titleBodyPage= "The Psychological General Well-Being Index (PGWBI)"; // !!! MODIFY !!!
 
 //Suggest: you can put a link in this way
 //<a target="_blank" href="http://siteTarget">
 //
-$subParagraph = "";// !!! MODIFY !!!
+$subParagraph = "Dupuy H.J., 1984";// !!! MODIFY !!!
 
 
 // ***********
 //DRAW THE FIRST BAR CHART
 
-$firstChartTitle = ""; // !!! MODIFY !!!
+$firstChartTitle = " PGWBI Sub-scales "; // !!! MODIFY !!!
 
-$firstChartDescription = ""; // !!! MODIFY !!!
+$firstChartDescription = "In questo grafico  viene presentata la media delle sotto dimensioni di tutti i partecipanti"; // !!! MODIFY !!!
 
 
 
@@ -33,9 +33,9 @@ $firstChartDescription = ""; // !!! MODIFY !!!
 // ***********
 //DRAW THE SECOND BAR CHART
 
-$secondChartTitle = ""; // !!! MODIFY !!!
+$secondChartTitle = "Punteggio globale"; // !!! MODIFY !!!
 
-$secondChartDescription = ""; // !!! MODIFY !!!
+$secondChartDescription = "Il grafico si riferisce alla media del punteggio globale di tutti i partecipanti.<br> Il punteggio globale è stato calcolato divdendo per 22 la somma dei punteggi delle sottodimensioni ottenendo la media dell'item"; // !!! MODIFY !!!
 
 
 //*********** END SECOND CHART */
@@ -44,9 +44,9 @@ $secondChartDescription = ""; // !!! MODIFY !!!
 
 // DONUT CHART ////
 
-$donutTitle = ""; // !!! MODIFY !!!
+$donutTitle = "Partecipanti al pre test e al post test"; // !!! MODIFY !!!
 
-$donutDescription= "" ; // !!! MODIFY !!!
+$donutDescription= "Per una corretta misura delle differenze il campione deve essere uguale sia la pre test che al post test." ; // !!! MODIFY !!!
 
 
 //END DONUT CHART ******
@@ -72,15 +72,16 @@ From here modify php code according with the program to calculate the  scoring o
 
     //draw a bar chart for subscale's compassion
     var firstChart = new creaGrafico(
-        [<?php arraying($compassion['sottoscale']);?>],
-        [<?php arraying($postCompassion['sottoscale']);?>],
+        [<?php arraying($pgwbiScoringPre['sottoscale']);?>],
+        [<?php arraying($pgwbiScoringPost['sottoscale']);?>],
         [
-        "Gentilezza verso sé",
-        "Giudizio verso sé",
-        "Umanità condivisa",
-        "Isolamento",
-        "Mindfulness",
-        "Iper-identificazione"
+        "Ansia",
+        "Depressione",
+        "Positività e Benessere",
+        "Autocontrollo",
+        "Salute",
+        "Vitalità"
+        
         ],
         document.getElementById("firstChart")
         );
@@ -88,11 +89,10 @@ From here modify php code according with the program to calculate the  scoring o
     firstChart.barChart;
 
     var secondChart = new creaGrafico(
-      [<?php echo $compassion['compassioneGlob'].','.$compassion['dimensionePos'].','.$compassion['dimensioneNegat']; ?>],
-      [<?php echo $postCompassion['compassioneGlob'].','.$postCompassion['dimensionePos'].','.$postCompassion['dimensioneNegat']; ?>],
-      ["Compassione di Sè globale",
-          "Scala dimensioni positive",
-          "Scala dimensioni negative"],
+      [<?php echo $pgwbiScoringPre['totalPgwbiGlobSam']; ?>],
+      [<?php echo $pgwbiScoringPost['totalPgwbiGlobSam']; ?>],
+      ["Punteggio globale",
+        ],
       document.getElementById("secondChart")
 
                 );
@@ -103,7 +103,7 @@ From here modify php code according with the program to calculate the  scoring o
 <script src="startbootstrap-sb-admin-2-gh-pages/js/donutChart.js"></script>
 <script>
   var numberPartecipant = new creaDonut(
-  <?php echo (count($compassion['sample']));?>,<?php echo (count($postCompassion['sample']));?>,
+  <?php echo (count($pgwbiScoringPre['sample']));?>,<?php echo (count($pgwbiScoringPost['sample']));?>,
         document.getElementById("myPieChart")
 );
 
