@@ -7,21 +7,10 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <?php include "startbootstrap-sb-admin-2-gh-pages/head.php"; ?>
+  
 
   <title>Compassion chart</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 <body id="page-top">
@@ -38,8 +27,7 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Scala della Compassione di Sé</h1>
-        <p class="mb-4">Reference:
-Petrocchi, N., Ottaviani, C., & Couyoumdjian, A. (2014). Dimensionality of self-compassion: translation and construct validation of the self-compassion scale in an Italian sample. Journal Of Mental Health, 23(2), 72-77. Please visit the <a target="_blank" href="http://dx.doi.org/10.3109/09638237.2013.841869">official article http://dx.doi.org/10.3109/09638237.2013.841869</a>.</p>
+        <p class="mb-4">Reference:  Petrocchi, N., Ottaviani, C., & Couyoumdjian, A. (2014). Dimensionality of self-compassion: translation and construct validation of the self-compassion scale in an Italian sample. Journal Of Mental Health, 23(2), 72-77. Please visit the <a target="_blank" href="http://dx.doi.org/10.3109/09638237.2013.841869">official article http://dx.doi.org/10.3109/09638237.2013.841869</a>.</p>
 
         <!-- Content Row -->
         <div class="row">
@@ -75,7 +63,7 @@ Petrocchi, N., Ottaviani, C., & Couyoumdjian, A. (2014). Dimensionality of self-
                     <canvas id="myPieChart"></canvas>
                   </div>
                   <hr>
-                  Per una giusta misure delle differenze il campione deve essere uguale sia la pre test che al post test.
+                  Per una corretta misura delle differenze il campione deve essere uguale sia la pre test che al post test.
                 </div>
               </div>
 
@@ -96,8 +84,10 @@ Petrocchi, N., Ottaviani, C., & Couyoumdjian, A. (2014). Dimensionality of self-
 
 
         </div>
+        <!-- Footer -->
+        <?php include "startbootstrap-sb-admin-2-gh-pages/footer.php" ?>
+        <!-- End of Footer -->
 
-  
     </div> <!-- End of Content Wrapper. This wraps all things out the sidebar and starts in "startbootstrap-sb-admin-2-gh-pages/navbar.php" -->
     
   </div>
