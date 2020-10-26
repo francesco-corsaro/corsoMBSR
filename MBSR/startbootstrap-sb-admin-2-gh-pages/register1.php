@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
 
@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Registrazione</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -38,6 +38,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                                        
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
@@ -50,27 +51,27 @@
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            Genere:
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="genere" id="gen" value="1">
-                                                <label class="form-check-label" for="inlineRadio1">M</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="genere" id="gen2" value="2">
-                                                <label class="form-check-label" for="inlineRadio2">2</label>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" placeholder="Età" maxlength="2" required>
-                                        </div>
-                                    </div>
                                     <div class="col-sm-6 ">
                                         <input type="password " class="form-control form-control-user " id="exampleRepeatPassword " placeholder="Repeat Password ">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            Genere:
+                                            <div class="form-check form-check-inline">
+                                                <input class="custom-control-input" type="radio" name="genere" id="gen" value="1">
+                                                <label class="form-check-label" for="gen">M</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="custom-control-input" type="radio" name="genere" id="gen2" value="2">
+                                                <label class="form-check-label" for="gen2">F</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control form-control-user" placeholder="Età" min="18" max="99" required>
+                                        </div>
+                                    </div>
                                 <a href="login.html " class="btn btn-primary btn-user btn-block ">
                   Register Account
                 </a>
@@ -98,14 +99,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js "></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js "></script>
+    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js "></script>
+    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js "></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js "></script>
+    <script src="startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js "></script>
 
 </body>
 

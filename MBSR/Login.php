@@ -17,7 +17,7 @@ if ($_POST['out']==1) {
     	<title>Login</title>
     	
     	<?php require 'FrontEnd/Css/login/Style.php'; ?>
-        <script> <!-- con questo script si mostra la password -->
+        <script> // con questo script si mostra la password -->
             function myFunction() {
               var x = document.getElementById("myInput");
               if (x.type === "password") {
