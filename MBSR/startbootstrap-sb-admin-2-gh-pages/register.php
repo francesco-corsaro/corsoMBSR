@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
 
@@ -18,6 +18,17 @@
     <!-- Custom styles for this template-->
     <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        .bgRegister {
+            background-image: url("startbootstrap-sb-admin-2-gh-pages/img/jen-theodore.jpg"); /* The image used */
+            background-color: #cccccc; /* Used if the image is unavailable */
+            height: 600px; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+        }
+    </style>
+
 </head>
 
 <body class="bg-gradient-primary">
@@ -28,66 +39,71 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-5 d-none d-lg-block bgRegister"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Crea un Account!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" autocomplete="on">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome" required autocomplete="given-name"  >
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Cognome" required autocomplete="family-name" >
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Indirizzo Email" required autocomplete="email" >
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <div class="input-group">
+                                               
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" minlength="8" required autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="La password deve contenere almeno   8 caratteri, una lettera maiuscola, una minuscola e un numero">
+                                            <div class="input-group-append">
+                                                <button class="btn bg-gray-200" type="button">
+                                                    <i class="fas fa-eye fa-lg "></i>
+                                                </button>
+                                            </div> 
+                                        </div>
+
+                                        
                                     </div>
                                     <div class="col-sm-6 ">
-                                        <input type="password " class="form-control form-control-user " id="exampleRepeatPassword " placeholder="Repeat Password ">
+                                        <input type="password" class="form-control form-control-user " id="exampleRepeatPassword " placeholder="Ripeti Password " required autocomplete="new-password">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             Genere:
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="genere" id="gen" value="1">
-                                                <label class="form-check-label" for="inlineRadio1">M</label>
+                                                <input class="form-check-input" type="radio" name="genere" id="gen" value="1" required>
+                                                <label class="form-check-label" for="gen">M</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="genere" id="gen2" value="2">
-                                                <label class="form-check-label" for="inlineRadio2">2</label>
+                                                <input class="form-check-input" type="radio" name="genere" id="gen2" value="2" required>
+                                                <label class="form-check-label" for="gen2">F</label>
                                             </div>
 
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" placeholder="Età" maxlength="2" required>
+                                            <input type="number" class="form-control form-control-user" placeholder="Età" min="18" max="99" required>
                                         </div>
                                     </div>
-                                <a href="login.html " class="btn btn-primary btn-user btn-block ">
-                  Register Account
-                </a>
+                                <input type="submit" class="btn btn-primary btn-user btn-block "
+                  value="Registra Account">
+                
                                 <hr>
-                                <a href="index.html " class="btn btn-google btn-user btn-block ">
-                                    <i class="fab fa-google fa-fw "></i> Register with Google
-                                </a>
-                                <a href="index.html " class="btn btn-facebook btn-user btn-block ">
-                                    <i class="fab fa-facebook-f fa-fw "></i> Register with Facebook
-                                </a>
+                                
                             </form>
                             <hr>
                             <div class="text-center ">
-                                <a class="small " href="forgot-password.html ">Forgot Password?</a>
+                                <a class="small " href="forgot-password.html ">Password dimenticata?</a>
                             </div>
                             <div class="text-center ">
-                                <a class="small " href="login.html ">Already have an account? Login!</a>
+                                <a class="small " href="login.html ">Hai già un account? Login!</a>
                             </div>
                         </div>
                     </div>
