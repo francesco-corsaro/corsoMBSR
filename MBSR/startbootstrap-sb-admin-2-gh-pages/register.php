@@ -63,7 +63,7 @@
                                                
                                             <input type="password" class="form-control form-control-user" id="inputPassword" placeholder="Password" minlength="8" required autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="La password deve contenere almeno   8 caratteri, una lettera maiuscola, una minuscola e un numero">
                                             <div class="input-group-append">
-                                                <button class="btn bg-gray-200" type="button">
+                                                <button id="show" class="btn bg-gray-200" type="button">
                                                     <i class="fas fa-eye fa-lg "></i>
                                                 </button>
                                             </div> 
@@ -101,7 +101,7 @@
                                             <input type="number" class="form-control form-control-user" placeholder="Età" min="18" max="99" required>
                                         </div>
                                     </div>
-                                <input type="submit" class="btn btn-primary btn-user btn-block "
+                                <input type="submit" id="submit" class="btn btn-primary btn-user btn-block "
                   value="Registra Account">
                 
                                 <hr>
@@ -122,24 +122,9 @@
 
     </div>
     <!--javascript for comparing and show password -->
-    <script>
-        var compare = document.getElementById("repeatPassword");
-        compare.addEventListener('focusout',compare_pwd);
-
-        function compare_pwd() {
-            var pwd = document.getElementById("inputPassword").value;
-            var pwd1 = document.getElementById("repeatPassword").value;
-            if (pwd != pwd1) {
-                
-                document.getElementById("mex_err").setAttribute("class", "alert alert-warning text-xs");
-                
-                document.getElementById("mex_err").innerHTML ="<i class=\"fas fa-exclamation fa-lg\"></i> &nbsp;&nbsp;Le password non coincidono";
-            } else {
-                document.getElementById("mex_err").setAttribute("class", " ");
-                document.getElementById("mex_err").innerHTML ="";
-            }
-        }
-    </script>
+    <script src="FrontEnd/jsMy/compare.js"></script>
+    <script src="FrontEnd/jsMy/showPass.js"></script>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js "></script>
     <script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
