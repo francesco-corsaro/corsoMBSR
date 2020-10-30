@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Mindful - Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,10 +48,10 @@
                             <form class="user" autocomplete="on">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome" required autocomplete="given-name"  >
+                                        <input type="text" class="form-control form-control-user" id="firstName" placeholder="Nome" required autocomplete="given-name"  >
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Cognome" required autocomplete="family-name" >
+                                        <input type="text" class="form-control form-control-user" id="lastName" placeholder="Cognome" required autocomplete="family-name" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -61,7 +61,7 @@
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <div class="input-group">
                                                
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" minlength="8" required autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="La password deve contenere almeno   8 caratteri, una lettera maiuscola, una minuscola e un numero">
+                                            <input type="password" class="form-control form-control-user" id="inputPassword" placeholder="Password" minlength="8" required autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="La password deve contenere almeno   8 caratteri, una lettera maiuscola, una minuscola e un numero">
                                             <div class="input-group-append">
                                                 <button class="btn bg-gray-200" type="button">
                                                     <i class="fas fa-eye fa-lg "></i>
@@ -72,8 +72,17 @@
                                         
                                     </div>
                                     <div class="col-sm-6 ">
-                                        <input type="password" class="form-control form-control-user " id="exampleRepeatPassword " placeholder="Ripeti Password " required autocomplete="new-password">
-                                    </div>
+                                        
+                                            <input type="password" class="form-control form-control-user " id="repeatPassword" placeholder="Ripeti Password " required autocomplete="new-password">
+                                        
+                                            
+                                                        <div id="mex_err" >
+                                                            
+                                                        </div>
+                                            
+                                        
+                                    </div>    
+                                   
                                 </div>
                                 <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
@@ -112,7 +121,25 @@
         </div>
 
     </div>
+    <!--javascript for comparing and show password -->
+    <script>
+        var compare = document.getElementById("repeatPassword");
+        compare.addEventListener('focusout',compare_pwd);
 
+        function compare_pwd() {
+            var pwd = document.getElementById("inputPassword").value;
+            var pwd1 = document.getElementById("repeatPassword").value;
+            if (pwd != pwd1) {
+                
+                document.getElementById("mex_err").setAttribute("class", "alert alert-warning text-xs");
+                
+                document.getElementById("mex_err").innerHTML ="<i class=\"fas fa-exclamation fa-lg\"></i> &nbsp;&nbsp;Le password non coincidono";
+            } else {
+                document.getElementById("mex_err").setAttribute("class", " ");
+                document.getElementById("mex_err").innerHTML ="";
+            }
+        }
+    </script>
     <!-- Bootstrap core JavaScript-->
     <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js "></script>
     <script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
