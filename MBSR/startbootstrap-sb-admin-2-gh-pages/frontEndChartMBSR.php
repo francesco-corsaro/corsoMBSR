@@ -1,5 +1,8 @@
+<?php //VARIABILE DI SESSIONE $frontEndAdmin
+    $frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <?php include "head.php"; ?>
