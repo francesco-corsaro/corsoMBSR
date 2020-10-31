@@ -26,7 +26,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Corso mindfulness based stress reduction  </h1>
-        <p class="mb-4">Benvenuto al corso MBSR, da questa pagina puoi effettuare il login per partecipare al questionario</p>
+        <p class="mb-4">Ciao Utente<?php //inserire il nome e il cognome ?></p>
 
         <!-- Content Row -->
         <div class="row">
@@ -38,32 +38,16 @@
                     <h6 class="m-0 font-weight-bold text-white">Partecipa al questionario</h6>
                   </div>
                   <div class="card-body">
-                  <form class="user">
-                            <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Indirizzo email...">
-                            </div>
-                            <div class="form-group">
-                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                            <div class="custom-control custom-checkbox small">
-                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                <label class="custom-control-label" for="customCheck">Ricordami</label>
-                            </div>
-                            </div>
-                            <a href="index.html" class="btn btn-primary btn-user btn-block">
-                            Login
-                            </a>
-                            <hr>
-                            
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="forgot-password.html">Password dimenticata?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="register.html">Crea un Account!</a>
-                        </div>
+                        Clicca sul bottone sotto per partecipare al questionario. (testo provvisorio da cambiare. Inserire un testo alternativo per gli utenti che già hanno fatto il test e per qelliche devnon fare il post test)
+
+                        <div class="my-2"></div>
+                        <a href="#" class="btn btn-primary btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                            <span class="text">Inizia il questionario</span>
+                        </a>
+                        <div class="my-2"></div>
                   </div>
                 </div>
 

@@ -12,3 +12,6 @@
 
   <!-- Custom styles for this template-->
   <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- css per il calendario -->
+  <link rel="stylesheet" type="text/css" href="startbootstrap-sb-admin-2-gh-pages/css/calendar.css">
