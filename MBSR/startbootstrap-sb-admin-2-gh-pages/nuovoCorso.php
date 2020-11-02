@@ -26,7 +26,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Corso mindfulness based stress reduction  </h1>
-        <p class="mb-4">Benvenuto al corso MBSR, da questa pagina puoi effettuare il login per partecipare al questionario</p>
+        <p class="mb-4">Ciao amministratore, <br>da questa pagina puoi impostare le date per un nuovo corso</p>
 
         <!-- Content Row -->
         <div class="row">
@@ -35,35 +35,26 @@
             <!-- here insert login form -->
             <div class="card shadow mb-4  border-bottom-info">
                   <div class="card-header bg-gradient-info py-3">
-                    <h6 class="m-0 font-weight-bold text-white">Partecipa al questionario</h6>
+                    <h6 class="m-0 font-weight-bold text-white">Crea nuovo corso</h6>
                   </div>
                   <div class="card-body">
-                  <form class="user">
-                            <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Indirizzo email...">
-                            </div>
-                            <div class="form-group">
-                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                            <div class="custom-control custom-checkbox small">
-                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                <label class="custom-control-label" for="customCheck">Ricordami</label>
-                            </div>
-                            </div>
-                            <a href="index.html" class="btn btn-primary btn-user btn-block">
-                            Login
-                            </a>
-                            <hr>
-                            
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="forgot-password.html">Password dimenticata?</a>
+                    <form class="user">
+                    <div class="form-group row">
+                        <div class="col-6">
+                        Data di inizio:
                         </div>
-                        <div class="text-center">
-                            <a class="small" href="registerPage.php">Crea un Account!</a>
+                        <div class="col-1">
+                            <input type="number" class="form-control form-control-user" name="gg" placeholder="gg" min="0" max="31" title="Inserisci il giorno" required>
                         </div>
+                        <div class="col-1">
+                            <input type="number" class="form-control form-control-user" name="month" placeholder="mese" min="0" max="12" title="Inserisci il mese" required>
+                        </div>
+                        <div class="col-1">
+                            <input type="number" class="form-control form-control-user" name="year" placeholder="anno" min="2020" max="2023" title="Inserisci il mese" required>
+                        </div>
+                    </div>
+
+                    </form>
                   </div>
                 </div>
 

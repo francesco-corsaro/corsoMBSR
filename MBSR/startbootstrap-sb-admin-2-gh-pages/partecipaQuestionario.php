@@ -9,7 +9,8 @@
   
 
   <title>Corso  Mindfulness - Partecipa al questionario</title>
- 
+   
+
 
 </head>
 <body id="page-top">
@@ -62,53 +63,11 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Calendario</h6>
                 </div>
-                <?php
-                $day=date("d");
-                $month=date("F");
-                $year=date("Y");
-                $d=mktime(0, 0, 0, $month, 1, $year);
-                $weekDay= date("N", $d);
-
-                ?>
+                
 
                 <!-- Card Body -->
-                <div class="card-body">
-                <div class="month">      
-                    <ul>
-                        
-                        <li>
-                        <?php echo $month;?><br>
-                        <span style="font-size:18px"><?php echo $year; ?></span>
-                        </li>
-                    </ul>
-                    </div>
-
-                    <ul class="weekdays">
-                    <li>Mo</li>
-                    <li>Tu</li>
-                    <li>We</li>
-                    <li>Th</li>
-                    <li>Fr</li>
-                    <li>Sa</li>
-                    <li>Su</li>
-                    </ul>
-
-                    <ul class="days">  
-                    <?php
-                    for ($i=1; $i < $weekDay; $i++) { 
-                       echo '<li>&nbsp;</li>';
-                    }
-                    for ($i=1; $i < (date("t")+1) ; $i++) { 
-                        if ($i== $day) {
-                            echo '<li><span class="active">'.$i.'</span></li>';
-                        } else {
-                            echo '<li>'.$i.'</li>';
-                        }
-                    }
-
-                    ?>
-                    </ul>
-
+                <div class="card-body ">
+                <?php include "calendar.php" ; ?>
                   
                 </div>
               </div>
