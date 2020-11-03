@@ -12,7 +12,7 @@ if ($_SESSION['name']== 'kalimero' && isset( $_POST['msp'])){
     echo 'isset vero';
     
     //Mando alla pagina successiva
-    header("location:  /MBSR/STAY.php") ;
+    header("location:  /MBSR/SelfCompassionScale.php") ;
 }
 
 if (array_key_exists("48",$_POST['msp'])) {
@@ -20,7 +20,7 @@ if (array_key_exists("48",$_POST['msp'])) {
     $_SESSION['msp']=array();
     array_push($_SESSION['msp'],$_POST['msp']);
     //Mando alla pagina successiva
-    header("location: /MBSR/STAY.php") ;
+    header("location: /MBSR/SelfCompassionScale.php") ;
 }
 
 
@@ -89,7 +89,7 @@ $risposte=array('Per nulla','Poco','Abbastanza','Molto');
 		<h1>MSP</h1>
 		
 		<div class="col-9 consegna">	
-			E' qui di seguito riportata una lista di affermazioni che possono essere più o meno vere per lei. Dopo aver letto ciascuna frase, contrassegni con una crocetta il numero che indica il grado in cui l'affermazione le sembra descrivere meglio la sua situazione recente, vale a dire <em>negli ultimi quattro o cinque giorni</em>:
+			E' qui di seguito riportata una lista di affermazioni che possono essere più o meno vere per lei. Dopo aver letto ciascuna frase, contrassegni la risposta che indica il grado in cui l'affermazione le sembra descrivere meglio la sua situazione recente, vale a dire <em>negli ultimi quattro o cinque giorni</em>:
 		</div>
 		
 		

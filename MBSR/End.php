@@ -17,7 +17,28 @@ if ($_SESSION['bypass']==!$volta) {
 		<h1>Corso MBSR</h1>
 		
 		<div class="col-9 consegna">
-		<?php require 'DataBase/CaricaRisposte.php';
+		<?php 
+		//Costruire programa che controlla il giorno: if giorno della riga =giorno di oggi =>non inserisce i dati nella tabella; altrimenti chiama il programma CaricaRisposte
+		include  'DataBase/VerificaGiorno.php';
+		if ($databaseDay==1) {
+		    echo "<p>Error: Risposte gia presenti nel database.</p>" ;
+		} elseif ($databaseDay ==2 ){
+		    require 'DataBase/VerificaInsPost.php';
+		    if ($presentPost== 1 ) {
+		        echo "<p>Error: Risposte gia presenti nel database.</p>" ;
+		        
+		    }else {
+		        require 'DataBase/CaricaRispostePost.php'; //carica le risposte nelle postTest
+		    }
+		    
+		}
+		else {
+		    
+		    
+		    require 'DataBase/CaricaRisposte.php'; //carica le risposte nel preTest
+		   
+		}
+		
 		?>
 		</div>
 		<div class="col-12 tenda">

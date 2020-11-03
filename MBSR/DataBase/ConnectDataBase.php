@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "pspct";
+$username = "mindfulquestionnaire";
 $password ='' ;
-$dbname = "my_pspct";
+$dbname = "my_mindfulquestionnaire";
 
 
 // Create connection

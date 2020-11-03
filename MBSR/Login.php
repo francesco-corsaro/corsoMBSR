@@ -17,7 +17,7 @@ if ($_POST['out']==1) {
     	<title>Login</title>
     	
     	<?php require 'FrontEnd/Css/login/Style.php'; ?>
-        <script> <!-- con questo script si mostra la password -->
+        <script> // con questo script si mostra la password -->
             function myFunction() {
               var x = document.getElementById("myInput");
               if (x.type === "password") {
@@ -37,7 +37,10 @@ if ($_POST['out']==1) {
 		if ($_SESSION['denied']== 1) {
 		    echo "<div>Utentente non trovato</div>";
 		    $_SESSION['denied']= 0;
-		}?>
+		}
+		
+		
+		?>
 		<div class="col-9 tenda">
     				<div class="titolo">Login</div>
     					<div class="col-11">
@@ -47,7 +50,7 @@ if ($_POST['out']==1) {
         				</div>
         				
                     		<div class="col-6">	
-                    			<?php echo $emailErr;?>
+                    			<?php echo $emailErr;$emailErr=''; echo "<div style=\"color:red\">". $_SESSION['emailDoble']."</div>";$_SESSION['emailDoble']="";?>
                     			<input name="email" type="TEXT" placeholder="Username" oninput=validateForm() required>
                     		</div>
                     		<div class="col-12">
