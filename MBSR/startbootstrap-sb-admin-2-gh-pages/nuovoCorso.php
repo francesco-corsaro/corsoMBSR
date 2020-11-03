@@ -1,5 +1,8 @@
 <?php //VARIABILE DI SESSIONE $frontEndAdmin
     //$frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
+    
+
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -27,7 +30,7 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Corso mindfulness based stress reduction  </h1>
         <p class="mb-4">Ciao amministratore, <br>da questa pagina puoi impostare le date per un nuovo corso</p>
-
+		<?php echo $success;$success=''; echo $doppio;$doppio='';?>
         <!-- Content Row -->
         <div class="row">
 
@@ -38,7 +41,7 @@
                     <h6 class="m-0 font-weight-bold text-white">Crea nuovo corso</h6>
                   </div>
                   <div class="card-body">
-                    <form class="user">
+                    <form class="user" name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <div class="form-group row">
                         <label for="courseName" class="col-sm-3 col-form-label pl-4">
                             Dai un nome al nuovo corso <br>(Es: mbsr-apr-mag.2020)

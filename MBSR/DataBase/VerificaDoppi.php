@@ -10,11 +10,13 @@ function check_doble($tabel, $column, $target) {
        
         while($row = $result->fetch_assoc()){
             if ($row["$column"]==$target ){
+                //in questo caso trova un doppio 
                global $checkDoble;
                $checkDoble=1; 
             }
         }
     }else {
+        //Non ha trovato doppioni
         $result= "0 results" ;
         global $checkDoble;
         $checkDoble=0; 
