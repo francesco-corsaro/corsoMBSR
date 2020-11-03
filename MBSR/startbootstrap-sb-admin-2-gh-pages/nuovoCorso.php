@@ -33,26 +33,58 @@
 
           <div class="col-xl-8 col-lg-7">
             <!-- here insert login form -->
-            <div class="card shadow mb-4  border-bottom-info">
-                  <div class="card-header bg-gradient-info py-3">
+            <div class="card shadow mb-4  border-bottom-warning">
+                  <div class="card-header bg-gradient-warning py-3">
                     <h6 class="m-0 font-weight-bold text-white">Crea nuovo corso</h6>
                   </div>
                   <div class="card-body">
                     <form class="user">
                     <div class="form-group row">
-                        <div class="col-6">
-                        Data di inizio:
-                        </div>
-                        <div class="col-1">
-                            <input type="number" class="form-control form-control-user" name="gg" placeholder="gg" min="0" max="31" title="Inserisci il giorno" required>
-                        </div>
-                        <div class="col-1">
-                            <input type="number" class="form-control form-control-user" name="month" placeholder="mese" min="0" max="12" title="Inserisci il mese" required>
-                        </div>
-                        <div class="col-1">
-                            <input type="number" class="form-control form-control-user" name="year" placeholder="anno" min="2020" max="2023" title="Inserisci il mese" required>
+                        <label for="courseName" class="col-sm-3 col-form-label pl-4">
+                            Dai un nome al nuovo corso <br>(Es: mbsr-apr-mag.2020)
+                        </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control form-control-user" name="courseName" id="courseName" placeholder="Nome corso..."  title="Dai un nome al corso" required>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        
+                            <label for="number" class="col-sm-3 col-form-label pt-3 pl-4" >
+                            Data inizio corso:<br>Es: 12/04/2020
+                            </label>
+                            <div class="col-sm-2">
+                            <input type="number" id ="number" class="form-control form-control-user" name="gg" placeholder="gg" min="0" max="31" title="Inserisci il giorno" required>
+                            </div>
+                            <div class="col-sm-2">
+                            <input type="number" class="form-control form-control-user" name="month" placeholder="mese" min="0" max="12" title="Inserisci il mese" required>
+                            </div>
+                            <div class="col-sm-2">
+                            <input type="number" class="form-control form-control-user" name="year" placeholder="anno" value="2020" min="2020" max="2023" title="Inserisci il mese" required>
+                            </div>
+                        
+                    </div>
+                    <div class="form-group row">
+                        
+                            <label for="numberEnd" class="col-sm-3 col-form-label pt-3 pl-4" >
+                            Data fine corso:
+                            </label>
+                            <div class="col-sm-2">
+                            <input type="number" id="numberEnd" class="form-control form-control-user" name="ggEnd" placeholder="gg" min="0" max="31" title="Inserisci il giorno" required>
+                            </div>
+                            <div class="col-sm-2">
+                            <input type="number" class="form-control form-control-user" name="monthEnd" placeholder="mese" min="0" max="12" title="Inserisci il mese" required>
+                            </div>
+                            <div class="col-sm-2">
+                            <input type="number" class="form-control form-control-user" name="yearEnd" placeholder="anno" min="2020" max="2023" title="Inserisci il mese" required>
+                            </div>
+                        
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <div class="mx-auto" style="width: 200px;">
+                    <button type="button" class="btn btn-primary btn-user" data-toggle="modal" data-target="#confirmNewCourse">Conferma</button>
+                    </div>
+                    <?php include "modalNewCourse.php";?>
+
 
                     </form>
                   </div>
