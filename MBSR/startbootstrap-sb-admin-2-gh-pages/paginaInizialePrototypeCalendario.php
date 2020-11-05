@@ -38,12 +38,12 @@
                     <h6 class="m-0 font-weight-bold text-white">Partecipa al questionario</h6>
                   </div>
                   <div class="card-body">
-                  <form class="user">
+                  <form class="user" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
                             <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Indirizzo email...">
+                            <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Indirizzo email...">
                             </div>
                             <div class="form-group">
-                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                            <input type="password" name="pwd" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                             </div>
                             <div class="form-group">
                             <div class="custom-control custom-checkbox small">
@@ -51,9 +51,8 @@
                                 <label class="custom-control-label" for="customCheck">Ricordami</label>
                             </div>
                             </div>
-                            <a href="index.html" class="btn btn-primary btn-user btn-block">
-                            Login
-                            </a>
+                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
+                           
                             <hr>
                             
                         </form>

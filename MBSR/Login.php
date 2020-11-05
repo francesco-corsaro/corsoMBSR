@@ -33,9 +33,9 @@ if ($_POST['out']==1) {
 		<h1>Corso MBSR</h1>
 		
 		<form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
-		<?php 
+		<?php //questo è un messagfgio che compare quando l'utente non inserisce correttamente o quando l'utente non è registrato
 		if ($_SESSION['denied']== 1) {
-		    echo "<div>Utentente non trovato</div>";
+		    echo "<div>Nome utentente o password non corretto</div>";
 		    $_SESSION['denied']= 0;
 		}
 		

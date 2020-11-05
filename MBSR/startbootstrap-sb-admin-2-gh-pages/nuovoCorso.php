@@ -44,10 +44,10 @@
                     <form class="user" name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <div class="form-group row">
                         <label for="courseName" class="col-sm-3 col-form-label pl-4">
-                            Dai un nome al nuovo corso <br>(Es: mbsr-apr-mag.2020)
+                            Dai un nome al nuovo corso <br>Es: 2020AprMag<br>! NON usare punteggiatura !
                         </label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control form-control-user" name="courseName" id="courseName" placeholder="Nome corso..."  title="Dai un nome al corso" required>
+                            <input type="text" class="form-control form-control-user" name="courseName" id="courseName" placeholder="Nome corso..."  title="Dai un nome al corso. NON usare punteggiatura !" required pattern="[A-Za-z0-9]" >
                         </div>
                     </div>
                     <div class="form-group row">
