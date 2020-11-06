@@ -21,7 +21,7 @@ if (array_key_exists("25",$_POST['compassion'])) {
     array_push($_SESSION['compassion'],$_POST['compassion']);
     
     //Mando alla pagina successiva
-    header("location: /MBSR/End.php") ;
+    header("location: /MBSR//endPage.php") ;
 }
 
 $compassion=array(
