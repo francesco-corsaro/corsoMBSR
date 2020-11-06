@@ -1,4 +1,4 @@
-
+<?php $bypass=$_SESSION['bypass'];?>
 
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -159,7 +159,7 @@
                                 if ($frontEndAdmin=='jhbfjJHBHjh8907jHKiUHUu' ) {
                                     echo 'Amministratore';
                                 } elseif ($bypass=='b1p4ss') {
-                                    # programma per prendere il nome e cognome
+                                    echo ucwords($_SESSION['name']);
                                 } else {
                                     echo 'Accedi';
                                 }

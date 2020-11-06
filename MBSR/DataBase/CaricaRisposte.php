@@ -52,7 +52,7 @@ $giorno=date("Y-m-d");
             
 //            echo $stato1.'<br>'.$stato.'<br>';
             
-            echo'Risposte caricate correttamente.<br>Grazie per aver partecipato.'; 
+            $result='Risposte caricate correttamente.<br>Grazie per aver partecipato.'; 
             $_SESSION['bypass']="1";
     ?>
      

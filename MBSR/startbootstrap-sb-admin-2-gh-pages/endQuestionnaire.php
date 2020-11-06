@@ -8,7 +8,7 @@
   <?php include "head.php"; ?>
   
 
-  <title>Corso  Mindfulness - Partecipa al questionario</title>
+  <title>Corso  Mindfulness - Fine questionario</title>
    
 
 
@@ -36,17 +36,17 @@
             <!-- here insert login form -->
             <div class="card shadow mb-4  border-bottom-info">
                   <div class="card-header bg-gradient-info py-3">
-                    <h6 class="m-0 font-weight-bold text-white">Partecipa al questionario</h6>
+                    <h6 class="m-0 font-weight-bold text-white">Fine del questionario</h6>
                   </div>
                   <div class="card-body">
-                        Clicca sul bottone sotto per partecipare al questionario.
+                        <?php echo $result;?>
 
                         <div class="my-2"></div>
-                        <a href="https://mindfulquestionnaire.altervista.org/MBSR/FFMQ.php" class="btn btn-primary btn-icon-split">
+                        <a href="https://mindfulquestionnaire.altervista.org/MBSR/logOut.php" class="btn btn-primary btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-right"></i>
                             </span>
-                            <span class="text">Inizia il questionario</span>
+                            <span class="text">Esci</span>
                         </a>
                         <div class="my-2"></div>
                   </div>

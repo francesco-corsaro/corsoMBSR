@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
             
             /* var_dump($row);*/
             $meccanico="<br>Login effettuato<br>";
-            header("location: /MBSR/FFMQ.php");
+            header("location: /MBSR/partecipaQuestionarioPage.php");
         }else{
             $_SESSION['denied']=1;
             
