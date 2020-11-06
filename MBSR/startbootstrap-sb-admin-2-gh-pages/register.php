@@ -45,23 +45,23 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Crea un Account!</h1>
                             </div>
-                            <form class="user" autocomplete="on">
+                            <form class="user" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  autocomplete="on">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="firstName" placeholder="Nome" required autocomplete="given-name"  >
+                                        <input type="text" class="form-control form-control-user" name="nome" id="firstName" placeholder="Nome" required autocomplete="given-name"  >
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="lastName" placeholder="Cognome" required autocomplete="family-name" >
+                                        <input type="text" class="form-control form-control-user" placeholder="Cognome" id="lastName" placeholder="Cognome" required autocomplete="family-name" >
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Indirizzo Email" required autocomplete="email" >
+                                    <input type="email"  name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Indirizzo Email" required autocomplete="email" >
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <div class="input-group">
                                                
-                                            <input type="password" class="form-control form-control-user" id="inputPassword" placeholder="Password" minlength="8" required autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="La password deve contenere almeno   8 caratteri, una lettera maiuscola, una minuscola e un numero">
+                                            <input type="password" name="pwd1" class="form-control form-control-user" id="inputPassword" placeholder="Password" minlength="8" required autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="La password deve contenere almeno   8 caratteri, una lettera maiuscola, una minuscola e un numero">
                                             <div class="input-group-append">
                                                 <button id="show" class="btn bg-gray-200" type="button">
                                                     <i class="fas fa-eye fa-lg "></i>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="col-sm-6 ">
                                         
-                                            <input type="password" class="form-control form-control-user " id="repeatPassword" placeholder="Ripeti Password " required autocomplete="new-password">
+                                            <input type="password" name="pwd2" class="form-control form-control-user " id="repeatPassword" placeholder="Ripeti Password " required autocomplete="new-password">
                                         
                                             
                                                         <div id="mex_err" >
@@ -101,8 +101,7 @@
                                             <input type="number" class="form-control form-control-user" placeholder="Età" min="18" max="99" required>
                                         </div>
                                     </div>
-                                <input type="submit" id="submit" class="btn btn-primary btn-user btn-block "
-                  value="Registra Account">
+                                <input type="submit" id="submit" class="btn btn-primary btn-user btn-block " value="Registra Account">
                 
                                 <hr>
                                 

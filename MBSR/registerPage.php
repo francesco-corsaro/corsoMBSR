@@ -1,5 +1,5 @@
 <?php
 
-require "startbootstrap-sb-admin-2-gh-pages/register.php";
+require "startbootstrap-sb-admin-2-gh-pages/registerAutocomplete.php";
 
 ?>
