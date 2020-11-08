@@ -22,7 +22,7 @@
         .bgRegister {
             background-image: url("startbootstrap-sb-admin-2-gh-pages/img/jen-theodore.jpg"); /* The image used */
             background-color: #cccccc; /* Used if the image is unavailable */
-            height: 600px; /* You must set a specified height */
+            height: 800px; /* You must set a specified height */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Do not repeat the image */
             background-size: cover; /* Resize the background image to cover the entire container */
@@ -123,7 +123,7 @@
                                         
                                     </div>    
                                    
-                                </div><hr><hr>
+                                </div><hr>
                                 <div class="form-group row">
                                 
                                         <div class="autocomplete col-sm-6 mb-3 mb-sm-0">
@@ -148,8 +148,29 @@
                                             </div>
 
                                         </div>
-      								</div><br><br>
-                                <input type="submit" id="submit" class="btn btn-primary btn-user btn-block " value="Registra Account">
+                                    </div><hr><hr>
+                                    <div class="form-group">
+                                      
+                                        Hai mai partecipato a un corso MBSR?  &nbsp;
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="partecipato" id="partecipato" value="1" required>
+                                          <label class="form-check-label" for="partecipato">Si</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="partecipato" id="partecipato2" value="2" required>
+                                                <label class="form-check-label" for="partecipato2">No</label>
+                                            </div>
+                                      
+                                    </div>
+                                    <div class="form-group row">
+                                      <div class="col-sm-6 mb-3 mb-sm-0">
+                                        Da quanti anni pratichi la Mindfulness?
+                                      </div>
+                                      <div class="col-sm-5">
+                                        <input type="number" name="esperienza" class="form-control form-control-user" placeholder="Anni" min="0" max="99" required>
+                                      </div>
+                                    </div><hr><hr>
+                                    <input type="submit" id="submit" class="btn btn-primary btn-user btn-block " value="Registra Account">
                 
                                 <hr>
                                 
