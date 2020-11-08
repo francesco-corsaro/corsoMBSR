@@ -58,6 +58,22 @@ function test_input_cognome($data) {
         $cognome= $data;
     }
 }
+function test_input_word($data) {
+    $data = htmlspecialchars($data);
+    $data= trim($data);
+    $data = stripslashes($data);
+    $data=strtolower($data);
+    if (!preg_match("/^[a-zA-Z ]*$/",$data)) {
+        
+        $wordErr = '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+        return $wordErr;
+    }else {
+        
+        
+        $wordStat=1;
+        return array($data,$wordStat);
+    }
+}
 function test_input_pwd($pwd, $pwd2) {
     $pwd=htmlspecialchars($pwd);
     $pwd=trim($pwd);
@@ -121,4 +137,6 @@ function test_input_pwd($pwd, $pwd2) {
            return $info; 
         }
     }
+    
+    
     ?>
