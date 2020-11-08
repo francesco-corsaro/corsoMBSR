@@ -1,6 +1,6 @@
 <?php
-$servername = "mindfulquestionnaire";
-$username = "pspct";
+$servername = "localhost";
+$username = "mindfulquestionnaire";
 $password ='' ;
 $dbname = "my_mindfulquestionnaire";
 

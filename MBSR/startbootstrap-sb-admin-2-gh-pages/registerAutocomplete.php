@@ -123,9 +123,20 @@
                                         
                                     </div>    
                                    
-                                </div>
+                                </div><hr><hr>
                                 <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                
+                                        <div class="autocomplete col-sm-6 mb-3 mb-sm-0">
+                                        
+        									<input id="myInput" class="form-control form-control-user" type="text" name="myCountry" placeholder="Professione">
+      									
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control form-control-user" placeholder="Età" min="18" max="99" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             Genere:
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="genere" id="gen" value="1" required>
@@ -137,15 +148,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-sm-6">
-                                            <input type="number" class="form-control form-control-user" placeholder="Età" min="18" max="99" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="autocomplete" >
-        									<input id="myInput" class="form-control form-control-user" type="text" name="myCountry" placeholder="Professione">
-      									</div>
-      								</div>
+      								</div><br><br>
                                 <input type="submit" id="submit" class="btn btn-primary btn-user btn-block " value="Registra Account">
                 
                                 <hr>
@@ -264,7 +267,7 @@ function autocomplete(inp, arr) {
 }
 
 /*An array containing all the country names in the world:*/
-var countries = ["Agricoltore","Architetto","Attore","Autista","Barista","Cameriere / cameriera","Casalinga","Commesso/a","Cuoco/a","Disoccupato/a","Dottore / dottoressa","Falegname","Farmacista","Giornalista","Impiegato/a","Infermiere/a","Ingegnere","Insegnante","Meccanico","Medico","Muratore","Operaio/a","Pensionato/a","Professore / professoressa","Psicologo/a","Ragioniere/a","Scrittore/scrittrice","Segretaria","Studente / studentessa","Traduttore / traduttrice","Vigile del fuoco","Regista","Poliziotto","Cantante","Musicista","Idraulico","Ballerino/a",];
+var countries = ["Agricoltore","Architetto","Attore","Autista","Barista","Cameriere / cameriera","Casalinga","Commesso/a","Cuoco/a","Disoccupato/a","Dottore / dottoressa","Falegname","Farmacista","Giornalista","Impiegato/a","Infermiere/a","Ingegnere","Insegnante","Meccanico","Medico","Muratore","Operaio/a","Pensionato/a","Professore / professoressa","Psicologo/a","Ragioniere/a","Scrittore/scrittrice","Segretaria","Studente / studentessa","Traduttore / traduttrice","Vigile del fuoco","Regista","Poliziotto","Cantante","Musicista","Idraulico","Ballerino/a",<?php include 'DataBase/jobList.php';?>];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);
