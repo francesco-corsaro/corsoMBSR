@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+$volta='b1p4ss';
+if ($_SESSION['bypass']!=$volta) {
+    header('Location: https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php') ;
+}
+
 include  'DataBase/VerificaGiorno.php';
 if ($databaseDay==1) {
     $result= "<p>Error: Risposte gia presenti nel database.</p>" ;

@@ -1,5 +1,9 @@
 <?php //VARIABILE DI SESSIONE $frontEndAdmin
     $frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
+    
+    if ($_SESSION['bypass']!==$frontEndAdmin) {
+        header('Location: https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php') ;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -25,7 +29,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800"><?php echo $titleBodyPage ; ?></h1>
-        <p class="mb-4"><?php echo $subParagraph.'<br>BYPASS '.$_SESSION['bypass'] ; ?></a>.</p>
+        <p class="mb-4"><?php echo $subParagraph; ?></a>.</p>
 
         <!-- Content Row -->
         <div class="row">
