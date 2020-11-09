@@ -1,13 +1,13 @@
 <?php
 
-function Inserisci_id($tabel, $email ,$nome, $cognome, $genere, $eta, $pwd) {
+function Inserisci_id($tabel, $email ,$nome, $cognome, $genere, $eta, $pwd, $professione, $anni_esperienza, $ex_corsista,$edizione) {
     
 
 require 'ConnectDataBase.php';
     
 
-$sql = "INSERT INTO $tabel ( Email, Nome, Cognome, Genere, Eta, Password)
-        VALUES ( '$email' ,'$nome', '$cognome', '$genere', '$eta', '$pwd')";
+$sql = "INSERT INTO $tabel ( Email, Nome, Cognome, Genere, Eta, Password, professione, anni_esperienza, ex_corsista,edizione)
+        VALUES ( '$email' ,'$nome', '$cognome', '$genere', '$eta', '$pwd', '$professione', '$anni_esperienza', '$ex_corsista', '$edizione')";
 if ($conn->query($sql) === TRUE) {
     global $stato;
     $stato= " | Anagrafica Caricata | ";

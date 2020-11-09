@@ -63,9 +63,9 @@ function test_input_word($data) {
     $data= trim($data);
     $data = stripslashes($data);
     $data=strtolower($data);
-    if (!preg_match("/^[a-zA-Z ]*$/",$data)) {
+    if (!preg_match("/^[^0-9]*$/",$data)) {
         
-        $wordErr = '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+        $wordErr = '<div class="col-12 errore">Sono consentiti solo lettere </div>';
         return $wordErr;
     }else {
         
@@ -83,13 +83,13 @@ function test_input_pwd($pwd, $pwd2) {
     $pwd2 = trim($pwd2);
     $pwd2  = stripslashes($pwd2);   
     
-    if (!preg_match("/^[a-zA-Z0-9 ]*$/",$pwd) && !preg_match("/^[a-zA-Z ]*$/",$pwd2) ) {
+    if (!preg_match("/^[a-zA-Z0-9 ]*$/",$pwd) && !preg_match("/^[a-zA-Z0-9 ]*$/",$pwd2) ) {
         global$pwdErr;
-        $pwdErr= '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+        $pwdErr= '<div class="alert alert-warning text-xs">Sono consentiti solo lettere e numeri</div>';
         ;
     }elseif ($pwd!==$pwd2){
         global $pwdErr;
-        $pwdErr= '<div class="col-12 errore">Le Password devono essere uguali</div>';
+        $pwdErr= '<div class="alert alert-warning text-xs">Le Password devono essere uguali</div>';
         ;
     }else {
         global $pwdStat;
@@ -110,7 +110,7 @@ function test_input_pwd($pwd, $pwd2) {
         $pwd=stripslashes($pwd);
         if (!preg_match("/^[a-zA-Z0-9 ]*$/",$pwd)) {
             global$pwdErr;
-            $pwdErr= '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+            $pwdErr= '<div class="alert alert-warning text-xs">Sono consentiti solo lettere e numeri</div>';
           
         }else {
             global $pwdStat;
@@ -126,7 +126,7 @@ function test_input_pwd($pwd, $pwd2) {
         //$info  = stripslashes($info);
         if (!preg_match("/^[0-9]*$/",$info) or $info<=$min or $info>=$max) {
             global$infoErr;
-            $infoErr = '<div class="col-12 errore">Formato non valido: Età, peso o altezza </div>';
+            $infoErr = '<div class="alert alert-warning text-xs">Formato non valido: Età, peso o altezza </div>';
             global$infoStato;
             $infoStato=0;
         }else{
@@ -138,5 +138,25 @@ function test_input_pwd($pwd, $pwd2) {
         }
     }
     
+    function test_input_num($info,$min, $max) {
+        $info= htmlspecialchars($info);
+        $info = trim($info);
+        //$info  = stripslashes($info);
+        if (!preg_match("/^[0-9]*$/",$info) or $info<=$min or $info>=$max) {
+            
+            $infoErr = '<div class="alert alert-warning text-xs">Formato non valido </div>';
+            
+            $infoStato=0;
+            return array($infoErr,$infoStato);
+        }else{
+            
+            $infoStato=1;
+            
+            return array($info,$infoStato);
+        }
+    }
+
+    
+
     
     ?>

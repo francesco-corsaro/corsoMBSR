@@ -76,7 +76,7 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
                 			
             					<input name="cognome" type="TEXT" placeholder="Cognome" required>
 								<div class="col-3 sezione">
-            <!-- NB: mettere età e genere nella stessa riga -->        	 
+        						  <?php echo $infoErr;$infoErr='';?>    	 
                     	 		  <input name="eta" type="TEXT" placeholder="Età" maxlength="2"required>
                     	       </div>
                     	       
