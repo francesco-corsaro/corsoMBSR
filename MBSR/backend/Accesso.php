@@ -15,12 +15,19 @@ if ($result->num_rows > 0) {
     
     while(   $row = $result->fetch_assoc()) {
         if ($row['Email'] == $email && password_verify($pasword, $row['Password'])) {
-            $_SESSION['bypass']='b1p4ss';
-            $_SESSION['nickName']=$email;
-            $_SESSION['codice']= $row["Id"]  ;
             
+            $_SESSION['nickName']=$email;
+            $_SESSION['codice']= $row["Id"];
+            $_SESSION['edizione']= $row["edizione"];
             $_SESSION['cogn']=$row["Cognome"];
             $_SESSION['name']=$row["Nome"];
+            $permesso=$row['permesso'];
+            if ($permesso==3) {
+                $_SESSION['bypass']='b1p4ss';
+            } else {
+                $_SESSION['bypass']='b1p4ss';
+            }
+            
             $conn->close();
             
             /* var_dump($row);*/
