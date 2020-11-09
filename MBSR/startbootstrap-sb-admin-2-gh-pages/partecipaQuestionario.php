@@ -40,7 +40,7 @@
                   </div>
                   <div class="card-body">
                         Clicca sul bottone sotto per partecipare al questionario.
-
+							
                         <div class="my-2"></div>
                         <a href="https://mindfulquestionnaire.altervista.org/MBSR/FFMQ.php" class="btn btn-primary btn-icon-split">
                             <span class="icon text-white-50">

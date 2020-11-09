@@ -24,7 +24,7 @@ $giorno=date("Y-m-d");
             $nome=$_SESSION['name'];
             $id=$_SESSION['codice'];
            //INSERISCE DATI NEL TEST FFMQ
-            Inserisci_dato('PostFfmq', 'Name', $nome,'Id',$id,'Giorno',$giorno);
+            Inserisci_dato('PostFfmq', 'Name', $nome,'Id',$id,'Giorno',$giorno, 'edizione', $_SESSION['edizione']);
             //echo $stato.'<br>';
         //associo il nome all'id
            /* Associa_Id($nome);*/
@@ -38,16 +38,16 @@ $giorno=date("Y-m-d");
             //echo $stato1.'<br>'.$stato.'<br>';
         
         //test PGWBI
-            Inserisci_id('PostPgwbi',$id, $giorno);
+            Inserisci_id('PostPgwbi',$id, $giorno, $_SESSION['edizione']);
             Carica_risp($colonnePGWBI, $_SESSION['pgwbi'][0], 'PostPgwbi', 'Id', $id,'Giorno',$giorno);
            //echo $stato1.'<br>'.$stato.'<br>';
         
         // Test Msp   
-            Inserisci_id('PostMsp', $id, $giorno);
+            Inserisci_id('PostMsp', $id, $giorno, $_SESSION['edizione']);
             Carica_risp($colonneMSP,$_SESSION['msp'][0] , 'PostMsp', 'Id', $id,'Giorno',$giorno);
 //            echo $stato1.'<br>'.$stato.'<br>';
         //test Compassion
-            Inserisci_id('PostCompassion', $id, $giorno);
+            Inserisci_id('PostCompassion', $id, $giorno, $_SESSION['edizione']);
             Carica_risp($colonneCompassion, $_SESSION['compassion'][0], 'PostCompassion', 'Id', $id,'Giorno',$giorno);
             
 //            echo $stato1.'<br>'.$stato.'<br>';
