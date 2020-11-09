@@ -8,7 +8,7 @@ pwd_match($_POST[pwd]);
 
 require 'DataBase/ConnectDataBase.php';//serve a connettersi al database
 
-$sql = "SELECT Email, Password, Id, Nome, Cognome, edizione FROM Anagrafica";
+$sql = "SELECT Email, Password, Id, Nome, Cognome, edizione, permesso FROM Anagrafica";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,16 +23,19 @@ if ($result->num_rows > 0) {
             $_SESSION['name']=$row["Nome"];
             $permesso=$row['permesso'];
             if ($permesso==3) {
-                $_SESSION['bypass']='b1p4ss';
+                $_SESSION['bypass']='jhbfjJHBHjh8907jHKiUHUu';
+               // $conn->close();
+                header("location: /MBSR/ffmqAdmin.php");
             } else {
                 $_SESSION['bypass']='b1p4ss';
+                header("location: /MBSR/partecipaQuestionarioPage.php");
             }
             
             $conn->close();
             
             /* var_dump($row);*/
             $meccanico="<br>Login effettuato<br>";
-            header("location: /MBSR/partecipaQuestionarioPage.php");
+            
         }else{
             $_SESSION['denied']=1;
             

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //include a progragram to get scoring of the test
 include 'DataBase/ffmq_scoring.php' ; // !!! MODIFY !!!

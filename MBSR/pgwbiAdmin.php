@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //include a progragram to get scoring of the test
 include 'DataBase/pgwbi_scoring.php' ; // !!! MODIFY !!!
 

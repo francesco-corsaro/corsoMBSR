@@ -25,7 +25,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800"><?php echo $titleBodyPage ; ?></h1>
-        <p class="mb-4"><?php echo $subParagraph ; ?></a>.</p>
+        <p class="mb-4"><?php echo $subParagraph.'<br>BYPASS '.$_SESSION['bypass'] ; ?></a>.</p>
 
         <!-- Content Row -->
         <div class="row">

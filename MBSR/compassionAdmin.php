@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'DataBase/calcoloPunteggi.php'; //It's a program that get scoring of the test compassion
 require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that sets tag html to build a barchart
 

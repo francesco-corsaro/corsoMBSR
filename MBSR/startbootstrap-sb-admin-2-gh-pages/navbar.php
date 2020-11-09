@@ -1,4 +1,7 @@
-<?php $bypass=$_SESSION['bypass'];?>
+<?php
+$bypass=$_SESSION['bypass'];
+$frontEndAdmin=$_SESSION['bypass']; 
+?>
 
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
