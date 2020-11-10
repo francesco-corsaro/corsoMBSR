@@ -87,7 +87,7 @@
                                         
                                             
                                                         <div id="mex_err" >
-                                                            <?php echo $pwdErr;?>
+                                                            <?php echo $pwdErr.$problem;?>
                                                         </div>
                                             
                                         
