@@ -10,7 +10,12 @@
 
   <title>Corso  Mindfulness - Partecipa al questionario</title>
  
-
+  <style>
+    .btnradius{
+      width: 100%;
+      border-radius: 35rem;
+    }
+  </style>
 </head>
 <body id="page-top">
 
@@ -51,17 +56,20 @@
                                 <label class="custom-control-label" for="customCheck">Ricordami</label>
                             </div>
                             </div>
-                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
-                           
+                            <div class="text-center">
+                            <input type="submit" class="btn btn-primary btn-user btn-block btn-lg" value="Login">
+                            </div>
+                            <div class="text-center"><br>
+                              <a class="small" href="forgot-password.html">Hai dimenticato la password?</a>
+                            </div>
                             <hr>
                             
                         </form>
                         <hr>
+                        
                         <div class="text-center">
-                            <a class="small" href="forgot-password.html">Password dimenticata?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="registerPage.php">Crea un Account!</a>
+                            <h5>Sei un nuovo partecipante?</h5>
+                            <a class="btn btn-outline-primary btn-user btn-lg btnradius" href="registerPage.php">Crea un Account!</a>
                         </div>
                   </div>
                 </div>

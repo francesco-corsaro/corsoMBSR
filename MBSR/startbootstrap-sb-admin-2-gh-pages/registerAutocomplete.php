@@ -130,7 +130,7 @@
                                 
                                         <div class="autocomplete col-sm-6 mb-3 mb-sm-0">
                                         
-        									<input id="myInput" class="form-control form-control-user" type="text" name="myCountry" placeholder="Professione">
+        									                <input id="myInput" class="form-control form-control-user" type="text" name="myCountry" placeholder="Professione">
       										
                                         </div>
                                         <div class="col-sm-6">
@@ -151,7 +151,7 @@
                                             </div>
 
                                         </div>
-                                    </div><hr><hr>
+                                    </div><hr>
                                     <div class="form-group">
                                       
                                         Hai mai partecipato a un corso MBSR?  &nbsp;
