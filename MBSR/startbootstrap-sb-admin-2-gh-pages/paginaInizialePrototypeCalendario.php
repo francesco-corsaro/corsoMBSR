@@ -44,6 +44,7 @@
                   </div>
                   <div class="card-body">
                   <form class="user" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
+                            <?php echo $denied ; //Messagio di errore se non viene trovato il nome utente?>
                             <div class="form-group">
                             <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Indirizzo email...">
                             </div>

@@ -37,7 +37,10 @@ if ($result->num_rows > 0) {
             $meccanico="<br>Login effettuato<br>";
             
         }else{
-            $_SESSION['denied']=1;
+            $denied='<div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Danger!</strong> Ops..! L\'indirizzo email o la password non sono validi. Riprova o conttata gli amministratori.
+                      </div>';
             
         }
     }

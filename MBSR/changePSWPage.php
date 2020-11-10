@@ -20,7 +20,7 @@ if (!empty($_POST[email])){
         } else {
             $problem='<div class="alert alert-danger alert-dismissible fade show">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Danger!</strong> Ops..! Si è verificato un errore. Riprova o conttata gli amministratori.
+                        <strong>Danger!</strong> Ops..! L\'indirizzo email non è valido. Riprova o conttata gli amministratori.
                       </div>';
         }
         //$_SESSION['cambiopwd']=1;
