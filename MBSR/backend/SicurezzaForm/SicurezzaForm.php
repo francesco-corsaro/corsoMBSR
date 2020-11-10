@@ -27,6 +27,23 @@ function test_input_email($data) {
        
    }
 }
+function test_input_email_R($data) {
+    $data = htmlspecialchars($data);
+    $data= trim($data);
+    $data = stripslashes($data);
+    $data = strtolower($data);
+    
+    
+    // check if e-mail address is well-formed 
+    if (!filter_var($data, FILTER_VALIDATE_EMAIL) ) {
+        
+        $emailErr = '<div class="alert alert-warning text-xs">Formato email non valido</div>';
+        return array($emailErr,false);
+    }else {
+        
+        return array($data,true);
+    }
+}
 function test_input_nome($data) {
    $data = htmlspecialchars($data);
     $data= trim($data);

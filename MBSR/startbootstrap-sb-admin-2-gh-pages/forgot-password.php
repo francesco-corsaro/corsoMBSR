@@ -51,13 +51,12 @@
                     <h1 class="h4 text-gray-900 mb-2">Hai dimenticato la password?</h1>
                     <p class="mb-4">OK..può succedere. Inserisci il tuo indirizzo email qui sotto e ti invieremo un link per reimpostare la tua password!</p>
                   </div>
-                  <form class="user">
+                  <form class="user" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Inserisci l'indirizzo email...">
+                      <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Inserisci l'indirizzo email...">
+                    	<?php echo $mailErr;?>
                     </div>
-                    <a href="login.html" class="btn btn-primary btn-user btn-block">
-                      Reset Password
-                    </a>
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Reset Password">
                   </form>
                   <hr>
                   <div class="text-center">
