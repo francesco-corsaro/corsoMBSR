@@ -10,6 +10,11 @@ if (!empty(htmlspecialchars($_POST['email']))) {
     
     if ($email[1]==true) {
         
+        require 'DataBase/checkReg.php';
+        $present=check_reg('Anagrafica', 'Email', $email[0]);
+        if ($present[0]==true) {
+            
+        
         $destinatario=$email[0];
         
         $mittente='mindfulquestionnaire@altervista.org';
@@ -43,6 +48,10 @@ if (!empty(htmlspecialchars($_POST['email']))) {
                     <strong>Success!</strong> Ti abbiamo inviato una e-email all\'indirizzo '.$email[0].' con il link per cambiare la password
                    </div>';
         //francesco.corsaro.psi@gmail.com'
+        
+        } else {
+            $mailErr= $present[1]; //Mostra un messaggio di errore
+        }
         
     } elseif ( $email[1]== false) {
         
