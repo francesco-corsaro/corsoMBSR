@@ -180,10 +180,10 @@
                             </form>
                             <hr>
                             <div class="text-center ">
-                                <a class="small " href="forgot-password.html ">Password dimenticata?</a>
+                                <a class="small " href="forgotPassPage.php">Password dimenticata?</a>
                             </div>
                             <div class="text-center ">
-                                <a class="small " href="login.html ">Hai già un account? Login!</a>
+                                <a class="small " href="paginaIniziale.php ">Hai già un account? Login!</a>
                             </div>
                         </div>
                     </div>
