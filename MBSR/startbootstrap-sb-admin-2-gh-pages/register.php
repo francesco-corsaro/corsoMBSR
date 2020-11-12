@@ -54,8 +54,13 @@
                                         <input type="text" class="form-control form-control-user" placeholder="Cognome" id="lastName" placeholder="Cognome" required autocomplete="family-name" >
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email"  name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Indirizzo Email" required autocomplete="email" >
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="email"  name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Indirizzo Email" required autocomplete="email" >
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email"  name="email" class="form-control form-control-user" id="exampleInputEmailR" placeholder="Ripeti Email" required autocomplete="email" >
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
