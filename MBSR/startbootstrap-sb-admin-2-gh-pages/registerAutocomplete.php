@@ -102,6 +102,8 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="email"  name="email" class="form-control form-control-user" id="exampleInputEmailR" placeholder="Ripeti Email" required autocomplete="email" >
+
+                                        <div id="email_err" ></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -206,7 +208,8 @@
       autocomplete(document.getElementById("myInput"), countries);
     </script>
     <!--javascript for comparing and show password -->
-    <script src="FrontEnd/jsMy/compare.js"></script>
+    <script src="FrontEnd/jsMy/compare.js" ></script>
+
     <script src="FrontEnd/jsMy/showPass.js"></script>
     
     <!-- Bootstrap core JavaScript-->

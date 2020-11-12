@@ -1,18 +1,42 @@
-var compare = document.getElementById("repeatPassword");
-compare.addEventListener('focusout', compare_pwd);
+//TASK: trasformarlo in oggetto
+//email
+var email1 = document.getElementById("exampleInputEmail");
+var email2 = document.getElementById("exampleInputEmailR");
+var emailError = document.getElementById("email_err");
+var emailErrorMex = "L'email non coincide";
+email2.addEventListener('focusout', function() { compare(email1, email2, emailError, emailErrorMex, btnSub), false });
 
-function compare_pwd() {
-    var pwd = document.getElementById("inputPassword").value;
-    var pwd1 = document.getElementById("repeatPassword").value;
-    if (pwd != pwd1) {
 
-        document.getElementById("mex_err").setAttribute("class", "alert alert-warning text-xs");
+//password
+var trig = document.getElementById("repeatPassword");
 
-        document.getElementById("mex_err").innerHTML = "<i class=\"fas fa-exclamation fa-lg\"></i> &nbsp;&nbsp;Le password non coincidono";
-        document.getElementById("submit").disabled = true;
+
+var pwd = document.getElementById("inputPassword");
+var pwd1 = document.getElementById("repeatPassword");
+
+
+var pwdError = document.getElementById("mex_err");
+var pwdErrorMex = "Le password non coincidono";
+
+var btnSub = document.getElementById("submit");
+
+
+
+function compare(firstElmnt, secondElmnt, container, mex, botton) {
+
+    if (firstElmnt.value != secondElmnt.value) {
+
+        container.setAttribute("class", "alert alert-warning text-xs");
+
+        container.innerHTML = "<i class=\"fas fa-exclamation fa-lg\"></i> &nbsp;&nbsp;" + mex;
+        botton.disabled = true;
+
     } else {
-        document.getElementById("mex_err").setAttribute("class", " ");
-        document.getElementById("mex_err").innerHTML = "";
-        document.getElementById("submit").disabled = false;
+        container.setAttribute("class", " ");
+        container.innerHTML = "";
+        botton.disabled = false;
+
     }
 }
+
+trig.addEventListener('focusout', function() { compare(pwd, pwd1, pwdError, pwdErrorMex, btnSub), false });
