@@ -2,7 +2,7 @@
 session_start();
 $volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
-    header("location: /MBSR/Login.php") ;
+    header("location:  https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php") ;
 }
 //Creo dei permessi per bypassare il required $_POST['stay2']
 if ($_SESSION['name']!= 'kalimero') {

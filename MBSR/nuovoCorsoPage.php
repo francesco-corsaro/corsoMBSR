@@ -1,4 +1,12 @@
 <?php
+session_start();
+$frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
+
+if ($_SESSION['bypass']!==$frontEndAdmin) {
+    header('Location: https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php') ;
+}
+
+
 if (isset($_POST['courseName']) && isset($_POST['gg']) && isset($_POST['month']) && isset($_POST['month']) && isset($_POST['year']) && isset($_POST['ggEnd']) && isset($_POST['monthEnd']) && isset($_POST['yearEnd'])) {
     include 'DataBase/VerificaDoppi.php';
     check_doble('Edizioni', 'nome', $_POST['courseName']);

@@ -16,7 +16,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestisci corsi:</h6>
             <a class="collapse-item" href="buttons.html">I miei corsi</a>
-            <a class="collapse-item" href="cards.html">Nuovo corso</a>
+            <a class="collapse-item" href="https    ://mindfulquestionnaire.altervista.org/MBSR/nuovoCorsoPage.php">Nuovo corso</a>
         </div>
     </div>
 </li>
@@ -30,8 +30,8 @@
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestisci partecipanti:</h6>
-            <a class="collapse-item" href="utilities-color.html">Iscrizioni</a>
-            <a class="collapse-item" href="utilities-border.html">Permessi</a>
+            <a class="collapse-item" href="tablePage.php">Iscrizioni</a>
+            
 
         </div>
     </div>
@@ -54,9 +54,9 @@
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Aggiorna materiale:</h6>
-            <a class="collapse-item" href="login.html">Tracce audio</a>
-            <a class="collapse-item" href="register.html">Letture</a>
-            <a class="collapse-item" href="forgot-password.html">Homework</a>
+            <a class="collapse-item" href="#">Tracce audio</a>
+            <a class="collapse-item" href="#">Letture</a>
+            <a class="collapse-item" href="#">Homework</a>
             <div class="collapse-divider"></div>
 
         </div>

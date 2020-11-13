@@ -4,7 +4,7 @@ session_start();
 //Creo dei permessi per bypassare il reuired
 $volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
-    header("location: /MBSR/Login.php") ;
+    header("location:  https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php") ;
 }
 if ($_SESSION['name']!= 'kalimero') {
     $controllo='required' ;

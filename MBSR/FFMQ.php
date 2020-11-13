@@ -2,7 +2,7 @@
 session_start();
 $volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
-    header("location: /MBSR/Login.php") ;
+    header("location:  https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php") ;
 }
 //prendo la variabile Nome
 if (!preg_match("/^[a-zA-Z0-9 ]*$/",$_SESSION['Name'])) {
