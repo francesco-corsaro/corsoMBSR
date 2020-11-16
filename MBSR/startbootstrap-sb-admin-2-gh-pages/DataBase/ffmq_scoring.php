@@ -1,4 +1,6 @@
 <?php
+//Qui posso aggiungere una seconda variabile che imposta una
+//clausola WHERE per selezionare un un insieme specifico di partecipanti
 function ffmq_scoring ($tabel) {
     
     $flag= 1;

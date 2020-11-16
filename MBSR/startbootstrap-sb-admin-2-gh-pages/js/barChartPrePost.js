@@ -1,21 +1,27 @@
-Chart.defaults.global.defaultFontSize = 18;
+//Chart.defaults.global.defaultFontSize = 18;
 
 function creaGrafico(pntPre, pntPost, dimensione, nameChart) {
 
     this.preTest = {
         label: 'Pre-Test',
         data: pntPre,
-        backgroundColor: 'rgba(0, 99, 132, 0.6)',
-        borderColor: 'rgba(0, 99, 132, 1)'
-            //yAxisID: "y-axis-preTest"
+        borderWidth: 3,
+        backgroundColor: 'rgb(0,191,255,0.3)',
+        borderColor: 'rgb(30,144,255,0.3)',
+        hoverBackgroundColor: 'rgb(0,191,255,0.8)',
+        hoverBorderColor: 'rgb(30,144,255,0.8)',
+        //yAxisID: "y-axis-preTest"
     };
 
     this.postTest = {
         label: 'Post-Test',
         data: pntPost,
-        backgroundColor: 'rgba(99, 132, 0, 0.6)',
-        borderColor: 'rgba(99, 132, 0, 1)'
-            //yAxisID: "y-axis-postTest"
+        borderWidth: 3,
+        backgroundColor: 'rgb(255,142,32, 0.3)',
+        borderColor: 'rgb(255,126,0, 0.5)',
+        hoverBackgroundColor: 'rgb(255,142,32,0.6)',
+        hoverBorderColor: 'rgb(255,126,0,0.8)',
+        //yAxisID: "y-axis-postTest"
     };
 
     this.dimensioni = {
@@ -32,7 +38,9 @@ function creaGrafico(pntPre, pntPost, dimensione, nameChart) {
             }],
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    maxTicksLimit: 5,
+                    padding: 10,
                 }
             }]
         }
@@ -46,7 +54,6 @@ function creaGrafico(pntPre, pntPost, dimensione, nameChart) {
     });
 
 };
-
 //I seguenti array devono essere ricevuti tramite php
 //considerare se conviene utilizzare un oggetto o un array
 /*

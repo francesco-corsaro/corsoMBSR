@@ -69,39 +69,37 @@ include "startbootstrap-sb-admin-2-gh-pages/frontEndChartMBSR.php";
 ?>
 <!-- my functions to show the bar chart. 
      
-From here modify php code according with the program to calculate the  scoring of the test-->
+From here modify php code according with the program to calculate the  scoring of the test
+<script src="startbootstrap-sb-admin-2-gh-pages/js/barChartPrePost.js"></script>-->
 <script src="startbootstrap-sb-admin-2-gh-pages/js/barChartPrePost.js"></script>
-  <script>
+   
+<script >
 
     //draw a bar chart for subscale's compassion
     var firstChart = new creaGrafico(
-        [<?php arraying($ffmqScoringPre['sottoscale']);?>],
-        [<?php arraying($ffmqScoringPost['sottoscale']);?>],
-        [
-        "Osservare",
-        "Descrivere",
-        "Agire con consapevolezza",
-        "Non giudicare",
-        "Non reagire",
-        
+        [<?php arraying($ffmqScoringPre['sottoscale']);?>], [<?php arraying($ffmqScoringPost['sottoscale']);?>], [
+            "Osservare",
+            "Descrivere",
+            "Agire con consapevolezza",
+            "Non giudicare",
+            "Non reagire",
+
         ],
         document.getElementById("firstChart")
-        );
+    );
 
-    firstChart.barChart;
+firstChart.barChart;
 
-    var secondChart = new creaGrafico(
-      [<?php echo $ffmqScoringPre['totalFfmqGlobSam']; ?>],
-      [<?php echo $ffmqScoringPost['totalFfmqGlobSam']; ?>],
-      ["Punteggio globale",
-        ],
-      document.getElementById("secondChart")
+var secondChart = new creaGrafico(
+    [<?php echo $ffmqScoringPre['totalFfmqGlobSam']; ?>], [<?php echo $ffmqScoringPost['totalFfmqGlobSam']; ?>], ["Punteggio globale", ],
+    document.getElementById("secondChart")
 
-                );
-    secondChart.barChart;
+);
+secondChart.barChart;
+
 </script>
 
-<!-- file to draw donut chart-->
+<!-- file to draw donut chart -->
 <script src="startbootstrap-sb-admin-2-gh-pages/js/donutChart.js"></script>
 <script>
   var numberPartecipant = new creaDonut(

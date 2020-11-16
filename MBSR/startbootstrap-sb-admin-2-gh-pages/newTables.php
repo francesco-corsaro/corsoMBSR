@@ -58,15 +58,32 @@ $conn->close();
           <div class="col-xl-8 col-lg-7">
             <!-- here insert login form -->
             <div class="card shadow mb-4  border-bottom-info">
-                  <div class="card-header bg-gradient-info py-3">
-                    <h6 class="m-0 font-weight-bold text-white">Partecipa al questionario</h6>
-                  </div>
+                  <!-- Card Header - Dropdown --><?php require 'DataBase/selectEdizioni.php'; ?>
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Edizione: <?php echo ($edizione ? $edizione : 'Tutte le edizioni') ; echo ' '.$erroresql; ?></h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Edizioni:</div>
+                                            <?php 
+                                            foreach ($edizioni as $k => $value) {
+                                                echo '<a class="dropdown-item" href="http://mindfulquestionnaire.altervista.org/MBSR/tablePage.php?edition='.$edizioni[$k][0].'">'.$edizioni[$k][1].'</a>';
+                                            }
+                                            ?>
+                                            
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="http://mindfulquestionnaire.altervista.org/MBSR/tablePage.php">Mostra tutte</a>
+                                        </div>
+                                    </div>
+                                </div>
                   <div class="card-body">
                   <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th style="background-color:rgb(220,220,220,0.30); ">N°</th>
                       <th>Nome</th>
                       <th>Cognome</th>
                       <th>Registrazione</th>
@@ -76,7 +93,7 @@ $conn->close();
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>ID</th>
+                    <th style="background-color:rgb(220,220,220,0.30);" >N°</th>
                       <th>Nome</th>
                       <th>Cognome</th>
                       <th>Registrazione</th>
@@ -85,18 +102,20 @@ $conn->close();
                     </tr>
                   </tfoot>
                   <tbody>
-                  <?php 
+                  <?php $i=1;
+                  $edition=$_GET['edition'];
+                  if($edition!=""){$where="WHERE edizione='$edition'";}
 require 'DataBase/ConnectDataBase.php';
-$sql = "SELECT Id, Nome, Cognome, data FROM Anagrafica ORDER BY Cognome";
+$sql = "SELECT Id, Nome, Cognome, data FROM Anagrafica $where ORDER BY Cognome";
 $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
         $identif=$row['Id'];
-        if ($identif!=1) {
+        if ($identif!=1 || $identif!=25) {
             
         
         echo "<tr>
-                <td>".$row['Id']."</td>
+                <td style=\"background-color:rgb(220,220,220,0.30); \">".$i."</td>
                 <td>".$row['Nome']."</td>
                 <td>".$row['Cognome']."</td>
                 <td>".$row['data']."</td>
@@ -104,18 +123,12 @@ if ($result->num_rows > 0){
                 
                </tr>";
         }
+        $i++;
     }
 }
 
 ?>
-<tr>
-                <td><b>TOT</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><?php echo (count($pretest)-2); ?></td>
-                
-</tr>
+
                   </tbody>
                 </table>
               </div>

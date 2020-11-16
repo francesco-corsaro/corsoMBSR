@@ -11,9 +11,10 @@ function creaDonut(pntPre, pntPost, nameChart) {
             labels: ["Pre-test", "Post-test"],
             datasets: [{
                 data: [pntPre, pntPost],
-                backgroundColor: ['#4e73df', '#1cc88a'],
-                hoverBackgroundColor: ['#2e59d9', '#17a673'],
-                hoverBorderColor: "rgba(234, 236, 244, 1)",
+                backgroundColor: ['rgba(78, 115, 223,0.3)', 'rgba(28, 200, 138,0.3)'],
+                borderColor: ['rgba(78, 115, 223,0.5)', 'rgba(28, 200, 138,0.5)'],
+                hoverBackgroundColor: ['rgba(78, 115, 223,0.6)', 'rgba(28, 200, 138,0.6)'],
+                hoverBorderColor: ['rgba(78, 115, 223,0.8)', 'rgba(28, 200, 138,0.8)'],
             }],
         },
         options: {
