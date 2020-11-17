@@ -15,7 +15,7 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestisci corsi:</h6>
-            <a class="collapse-item" href="buttons.html">I miei corsi</a>
+            <a class="collapse-item" href="https://mindfulquestionnaire.altervista.org/MBSR/tabellaCorsiPage.php">I miei corsi</a>
             <a class="collapse-item" href="https://mindfulquestionnaire.altervista.org/MBSR/nuovoCorsoPage.php">Nuovo corso</a>
         </div>
     </div>
