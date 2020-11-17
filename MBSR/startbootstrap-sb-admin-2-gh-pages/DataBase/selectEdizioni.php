@@ -19,7 +19,7 @@
     } else {
         echo "0 results";
     }
-    $erroresql='errore sql '. $conn->connect_error;
+    $erroresql= $conn->connect_error;
     $conn->close();
 
 

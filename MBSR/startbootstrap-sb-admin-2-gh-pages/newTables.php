@@ -2,8 +2,7 @@
     //$frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
 
     $pretest=array();
-$pretest[14]='12-23-2222';
-$pretest[34]='64-33-2212';
+
 
 require 'DataBase/ConnectDataBase.php';
 $sql = "SELECT Id, Giorno FROM Ffmq";
@@ -18,6 +17,26 @@ if ($result->num_rows > 0){
     echo "0 results";
 }
 $conn->close();
+
+$postest=array();
+
+
+require 'DataBase/ConnectDataBase.php';
+$sql = "SELECT Id, Giorno FROM PostFfmq";
+$result = $conn->query($sql);
+if ($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+        $chiave=$row['Id'];
+        $val=$row["Giorno"];
+        $postest[$chiave]=$val;
+    }
+}else {
+    echo "0 results";
+}
+$conn->close();
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -60,7 +79,7 @@ $conn->close();
             <div class="card shadow mb-4  border-bottom-info">
                   <!-- Card Header - Dropdown --><?php require 'DataBase/selectEdizioni.php'; ?>
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Edizione: <?php echo ($edizione ? $edizione : 'Tutte le edizioni') ; echo ' '.$erroresql; ?></h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Edizione: <?php echo ($edizioni[$edition][1] ? $edizioni[$edition][1] : 'Tutte le edizioni') ; echo ' '.$erroresql; ?></h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -88,6 +107,7 @@ $conn->close();
                       <th>Cognome</th>
                       <th>Registrazione</th>
                       <th>Pre-Test</th>
+                      <th>Post-Test</th>
                       
                     </tr>
                   </thead>
@@ -98,12 +118,12 @@ $conn->close();
                       <th>Cognome</th>
                       <th>Registrazione</th>
                       <th>Pre-Test</th>
-                      
+                      <th>Post-Test</th>
                     </tr>
                   </tfoot>
                   <tbody>
                   <?php $i=1;
-                  $edition=$_GET['edition'];
+                  
                   if($edition!=""){$where="WHERE edizione='$edition'";}
 require 'DataBase/ConnectDataBase.php';
 $sql = "SELECT Id, Nome, Cognome, data FROM Anagrafica $where ORDER BY Cognome";
@@ -120,6 +140,7 @@ if ($result->num_rows > 0){
                 <td>".$row['Cognome']."</td>
                 <td>".$row['data']."</td>
                 <td>".$pretest[$identif]."</td>
+                <td>".$postest[$identif]."</td>
                 
                </tr>";
         }
