@@ -2,6 +2,7 @@
 session_start();
 
 //include a progragram to get scoring of the test
+$edi=$_GET['edition']; //get the variable to select the edition of the course
 include 'DataBase/ffmq_scoring.php' ; // !!! MODIFY !!!
 
 require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that sets tag html to build a barchart
@@ -22,7 +23,7 @@ methods to explore facets of mindfulness. Assessment, 13(1), 27-45";// !!! MODIF
 // ***********
 //DRAW THE FIRST BAR CHART
 
-$firstChartTitle = " FFMQ Sub-scales "; // !!! MODIFY !!!
+$firstChartTitle = " FFMQ Sub-scales"; // !!! MODIFY !!!
 
 $firstChartDescription = "In questo grafico  viene presentata la media dei punteggi di tutti i partecipanti"; // !!! MODIFY !!!
 
@@ -57,7 +58,7 @@ $donutDescription= "Per una corretta misura delle differenze il campione deve es
 //Descprtion how to calculate the scoring
 //collapsable card 
 $calculateScoringDescription = "Some researchers divide the total in each category by the number of items in that category to get
-an average category score. The Total FFMQ can be divided by 39 to get an average item score." ; // !!! MODIFY !!!
+an average category score. The Total FFMQ can be divided by 39 to get an average item score."."<br>"; // !!! MODIFY !!!
 
 ///////////////////////////////////////
 

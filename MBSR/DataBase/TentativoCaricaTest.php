@@ -1,4 +1,5 @@
 <?php
+/*
 //creo una funzione per caricare l'ffmq nella tabella
 
 function Carica_risp($colonna, $risp, $tabella, $posizione){
@@ -36,3 +37,21 @@ function Carica_test($colonna, $risp, $tabella, $posizione){
     }
     $conn->close();
 }
+
+SELECT Orders.*, Customers.*
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+WHERE Country='Brazil';
+*/
+
+require 'ConnectDataBase.php';
+
+$sql = "SELECT Anagrafica.Id,Anagrafica.edizione Customers.*
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+WHERE Country='Brazil'";
+
+
+
+
+

@@ -1,6 +1,7 @@
 <?php
 session_start();
 //include a progragram to get scoring of the test
+$edi=$_GET['edition']; //get the variable to select the edition of the course
 include 'DataBase/msp_scoring.php' ; // !!! MODIFY !!!
 
 require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that sets tag html to build a barchart

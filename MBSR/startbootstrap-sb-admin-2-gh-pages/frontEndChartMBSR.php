@@ -37,15 +37,18 @@
           <div class="col-xl-8 col-lg-7">
             <!-- here insert barchart -->
             <?php 
-            drawBarChart($firstChartTitle, $firstChartDescription, 'firstChart');
+            drawBarChart($firstChartTitle, $firstChartDescription, 'firstChart',$edi);
             ?>
 
             <?php 
             drawBarChart(
               $secondChartTitle,
               $secondChartDescription,
-              'secondChart'
+              'secondChart',
+              $edi
             );
+            
+           
             ?>
 
 

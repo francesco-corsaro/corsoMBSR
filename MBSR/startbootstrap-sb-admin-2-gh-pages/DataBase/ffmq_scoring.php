@@ -1,14 +1,19 @@
 <?php
 //Qui posso aggiungere una seconda variabile che imposta una
 //clausola WHERE per selezionare un un insieme specifico di partecipanti
-function ffmq_scoring ($tabel) {
-    
+function ffmq_scoring ($tabel,$optRow) {
+    if ( $optRow!="" ) {
+        $option=' WHERE edizione ='. $optRow;
+    } else {
+        $option="";
+    }
     $flag= 1;
     $sample= array();
     
     require 'ConnectDataBase.php';
     
-    $sql = "SELECT * FROM ".$tabel." "; 
+    $sql = "SELECT * FROM ".$tabel.$option." "; 
+    
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
@@ -77,8 +82,11 @@ function ffmq_scoring ($tabel) {
     
 
 };
-$ffmqScoringPre = ffmq_scoring ('Ffmq');
-$ffmqScoringPost = ffmq_scoring ('PostFfmq');
+
+
+$ffmqScoringPre = ffmq_scoring ('Ffmq',$edi);
+$ffmqScoringPost = ffmq_scoring ('PostFfmq',$edi);
+//var_dump($ffmqScoringPost);
 
 /*echo 'Punteggio partecipante con id 4 alla sotto scala describing '.$ffmqScoringPre['sample'][4]['describing'].'<br>';
 echo 'punteggio media del campione alla sottoscala describing '.$ffmqScoringPre['sottoscale']['describingGlobSam'].'<br>';

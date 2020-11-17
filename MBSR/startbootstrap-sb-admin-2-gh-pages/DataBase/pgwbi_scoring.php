@@ -1,12 +1,16 @@
 <?php
-function pgwbi_scoring ($tabel) {
-    
+function pgwbi_scoring ($tabel,$optRow) {
+    if ( $optRow!="" ) {
+        $option=' WHERE edizione ='. $optRow;
+    } else {
+        $option="";
+    }
     $flag= 1;
     $sample= array();
     
     require 'ConnectDataBase.php';
     
-    $sql = "SELECT * FROM ".$tabel." "; 
+    $sql = "SELECT * FROM ".$tabel.$option." ";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
@@ -83,8 +87,8 @@ function pgwbi_scoring ($tabel) {
     
 
 };
-$pgwbiScoringPre = pgwbi_scoring ('Pgwbi');
-$pgwbiScoringPost = pgwbi_scoring ('PostPgwbi');
+$pgwbiScoringPre = pgwbi_scoring ('Pgwbi',$edi);
+$pgwbiScoringPost = pgwbi_scoring ('PostPgwbi',$edi);
 
 /*echo 'Punteggio partecipante con id 4 alla sotto scala depressione '.$pgwbiScoringPre['sample'][4]['depressione'].'<br>';
 echo 'punteggio media del campione alla sottoscala describing '.$pgwbiScoringPre['sottoscale']['depressioneGlobSam'].'<br>';

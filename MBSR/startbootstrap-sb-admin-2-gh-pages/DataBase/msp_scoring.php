@@ -1,12 +1,16 @@
 <?php
-function msp_scoring ($tabel) {
-    
+function msp_scoring ($tabel,$optRow) {
+    if ( $optRow!="" ) {
+        $option=' WHERE edizione ='. $optRow;
+    } else {
+        $option="";
+    }
     $flag= 1;
     $sample= array();
     
     require 'ConnectDataBase.php';
     
-    $sql = "SELECT * FROM ".$tabel." "; 
+    $sql = "SELECT * FROM ".$tabel.$option." ";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
@@ -97,8 +101,8 @@ function msp_scoring ($tabel) {
     
 
 };
-$mspScoringPre = msp_scoring ('Msp');
-$mspScoringPost = msp_scoring ('PostMsp');
+$mspScoringPre = msp_scoring ('Msp',$edi);
+$mspScoringPost = msp_scoring ('PostMsp',$edi);
 /*/echo 'Punteggio partecipante con id 4 alla sotto scala irritabilita '.$mspScoringPre['sample'][4]['irritabilita'].'<br>';
 echo 'Punteggio partecipante con id 4 alla sotto scala totale '.$mspScoringPre['sample'][4]['totalMsp'].'<br>';
 echo 'punteggio media del campione alla sottoscala irritabilita '.$mspScoringPre['sottoscale']['irritabilitaGlobSam'].'<br>';

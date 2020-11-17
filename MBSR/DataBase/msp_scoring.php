@@ -1,12 +1,17 @@
 <?php
-function msp_scoring ($tabel) {
+function msp_scoring ($tabel,$optRow) {
     
+    if ( $optRow!="" ) {
+        $option=' WHERE edizione ='. $optRow;
+    } else {
+        $option="";
+    }
     $flag= 1;
     $sample= array();
     
     require 'ConnectDataBase.php';
     
-    $sql = "SELECT * FROM ".$tabel." "; 
+    $sql = "SELECT * FROM ".$tabel.$option." "; 
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
