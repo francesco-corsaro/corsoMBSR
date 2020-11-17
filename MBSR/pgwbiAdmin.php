@@ -52,7 +52,18 @@ $donutDescription= "Per una corretta misura delle differenze il campione deve es
 
 //END DONUT CHART ******
 
+//Avarege tabel
+$avg=[$pgwbiScoringPre['sottoscale'],
+$pgwbiScoringPost['sottoscale'],
+[
+"Ansia",
+"Depressione",
+"Positività e Benessere",
+"Autocontrollo",
+"Salute",
+"Vitalità"
 
+]];
 //Descprtion how to calculate the scoring
 //collapsable card 
 $calculateScoringDescription = "" ; // !!! MODIFY !!!

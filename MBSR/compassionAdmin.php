@@ -68,6 +68,53 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
                   Per una corretta misura delle differenze il campione deve essere uguale sia la pre test che al post test.
                 </div>
               </div>
+                  <?php 
+                  $avg=[$compassion['sottoscale'],$postCompassion['sottoscale'],[
+                    "Gentilezza verso sé",
+                    "Giudizio verso sé",
+                    "Umanità condivisa",
+                    "Isolamento",
+                    "Mindfulness",
+                    "Iper-identificazione"
+                    ]];
+                    ?>
+                <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Tabella medie: Scala della Compassione di Sé</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body border-bottom-info">
+                  <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Dimensione</th>
+                        <th>Media Pre-Test</th>
+                        <th>Media Post-Test</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Dimensione</th>
+                        <th>Media Pre-Test</th>
+                        <th>Media Post-Test</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <?php $i=0;foreach ($avg[0] as $key => $value)  { 
+                        echo'<tr>
+                              <td>'.$avg[2][$i].'</td>
+                              <td>'.$value.'</td>
+                              <td>'.$avg[1][$key].'</td>
+                             </tr>';
+                        $i++;
+                      } ?>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
 
               <!-- Collapsable Card Example -->
               <div class="card shadow mb-4">

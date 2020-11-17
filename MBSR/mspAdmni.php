@@ -51,7 +51,17 @@ $donutDescription= "Per una corretta misura delle differenze il campione deve es
 
 
 //END DONUT CHART ******
+//Avarege tabel
+$avg=[$mspScoringPre['sottoscale'],
+$mspScoringPost['sottoscale'],[
+  "PCI",
+  "SP",
+  "SSC",
+  "AD",
+  "DPF",
+  "IAC"
 
+]];
 
 //Descprtion how to calculate the scoring
 //collapsable card 

@@ -11,7 +11,7 @@
   <?php include "head.php"; ?>
   
 
-  <title>Corso  Mindfulness - Partecipa al questionario</title>
+  <title>Corso  Mindfulness - Nuovo Corso</title>
  
 
 </head>
@@ -47,7 +47,7 @@
                             Dai un nome al nuovo corso <br>Es: 2020AprMag<br>! NON usare punteggiatura !
                         </label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control form-control-user" name="courseName" id="courseName" placeholder="Nome corso..."  title="Dai un nome al corso. NON usare punteggiatura !" required pattern="[A-Za-z0-9]" >
+                            <input type="text" class="form-control form-control-user" name="courseName" id="courseName" placeholder="Nome corso..."  title="Dai un nome al corso. NON usare punteggiatura !" required pattern="[A-Za-z0-9 ]{1,32}" >
                         </div>
                     </div>
                     <div class="form-group row">

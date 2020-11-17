@@ -70,6 +70,44 @@
                   <hr><?php echo $donutDescription ; ?>
                 </div>
               </div>
+                <!--avarege tabel -->
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Tabella medie: <?php echo $titleBodyPage; ?></h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body border-bottom-info">
+                  <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Dimensione</th>
+                        <th>Media Pre-Test</th>
+                        <th>Media Post-Test</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Dimensione</th>
+                        <th>Media Pre-Test</th>
+                        <th>Media Post-Test</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <?php $i=0;foreach ($avg[0] as $key => $value)  { 
+                        echo'<tr>
+                              <td>'.$avg[2][$i].'</td>
+                              <td>'.$value.'</td>
+                              <td>'.$avg[1][$key].'</td>
+                             </tr>';
+                        $i++;
+                      } ?>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
 
               <!-- Collapsable Card Example -->
               <div class="card shadow mb-4">
@@ -80,7 +118,7 @@
                 <!-- Card Content - Collapse -->
                 <div class="collapse border-bottom-info show"     id="collapseCardExample">
                   <div class="card-body">
-                                        <?php echo $calculateScoringDescription ;?> 
+                                        <?php echo $calculateScoringDescription ; ?> 
                   </div>
                 </div>
               </div>

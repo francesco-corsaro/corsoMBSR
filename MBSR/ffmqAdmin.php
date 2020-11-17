@@ -54,6 +54,15 @@ $donutDescription= "Per una corretta misura delle differenze il campione deve es
 
 //END DONUT CHART ******
 
+//Avarege tabel
+$avg=[$ffmqScoringPre['sottoscale'],$ffmqScoringPost['sottoscale'],[
+    "Osservare",
+    "Descrivere",
+    "Agire con consapevolezza",
+    "Non giudicare",
+    "Non reagire"
+
+]];
 
 //Descprtion how to calculate the scoring
 //collapsable card 
