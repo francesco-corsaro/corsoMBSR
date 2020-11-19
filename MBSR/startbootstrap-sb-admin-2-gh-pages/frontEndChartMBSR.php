@@ -98,8 +98,8 @@
                       <?php $i=0;foreach ($avg[0] as $key => $value)  { 
                         echo'<tr>
                               <td>'.$avg[2][$i].'</td>
-                              <td>'.$value.'</td>
-                              <td>'.$avg[1][$key].'</td>
+                              <td>'.number_format($value,3,',', ' ').'</td>
+                              <td>'.number_format($avg[1][$key],3,',',' ' ).'</td>
                              </tr>';
                         $i++;
                       } ?>
