@@ -82,7 +82,9 @@ include "startbootstrap-sb-admin-2-gh-pages/frontEndChartMBSR.php";
 From here modify php code according with the program to calculate the  scoring of the test
 <script src="startbootstrap-sb-admin-2-gh-pages/js/barChartPrePost.js"></script>-->
 <script src="startbootstrap-sb-admin-2-gh-pages/js/barChartPrePost.js"></script>
-   
+<script>
+  
+</script>
 <script >
 
     //draw a bar chart for subscale's compassion

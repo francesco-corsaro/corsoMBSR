@@ -69,7 +69,7 @@ $conn->close();
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Corso mindfulness based stress reduction  </h1>
-        <p class="mb-4">Benvenuto al corso MBSR, da questa pagina puoi effettuare il login per partecipare al questionario</p>
+        <p class="mb-4">Benvenuto al corso MBSR, da questa pagina puoi visualizzare i partecipanti dei tuoi corsi</p>
 
         <!-- Content Row -->
         <div class="row">
@@ -106,6 +106,7 @@ $conn->close();
                       <th>Nome</th>
                       <th>Cognome</th>
                       <th>Registrazione</th>
+                      <th>Edizione</th>
                       <th>Pre-Test</th>
                       <th>Post-Test</th>
                       
@@ -117,6 +118,7 @@ $conn->close();
                       <th>Nome</th>
                       <th>Cognome</th>
                       <th>Registrazione</th>
+                      <th>Edizione</th>
                       <th>Pre-Test</th>
                       <th>Post-Test</th>
                     </tr>
@@ -126,7 +128,7 @@ $conn->close();
                   
                   if($edition!=""){$where="WHERE edizione='$edition'";}
 require 'DataBase/ConnectDataBase.php';
-$sql = "SELECT Id, Nome, Cognome, data FROM Anagrafica $where ORDER BY Cognome";
+$sql = "SELECT Id, Nome, Cognome, edizione, data FROM Anagrafica $where ORDER BY Cognome";
 $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
@@ -139,6 +141,7 @@ if ($result->num_rows > 0){
                 <td>".$row['Nome']."</td>
                 <td>".$row['Cognome']."</td>
                 <td>".$row['data']."</td>
+                <td>".$row['edizione']."</td>
                 <td>".$pretest[$identif]."</td>
                 <td>".$postest[$identif]."</td>
                 

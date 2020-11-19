@@ -1,4 +1,6 @@
-//Chart.defaults.global.defaultFontSize = 18;
+if (window.screen.width > 720) {
+    Chart.defaults.global.defaultFontSize = 16;
+}
 
 function creaGrafico(pntPre, pntPost, dimensione, nameChart) {
 
