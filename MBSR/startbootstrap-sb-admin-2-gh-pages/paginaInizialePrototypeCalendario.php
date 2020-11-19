@@ -40,7 +40,7 @@
             <!-- here insert login form -->
             <div class="card shadow mb-4  border-bottom-info">
                   <div class="card-header bg-gradient-info py-3">
-                    <h6 class="m-0 font-weight-bold text-white">Partecipa al questionario</h6>
+                    <h6 class="m-0 font-weight-bold text-white">Sei già registrato? Partecipa al questionario</h6>
                   </div>
                   <div class="card-body">
                   <form class="user" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
