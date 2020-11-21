@@ -111,7 +111,7 @@
     </div>
     
     <!--javascript for comparing and show password -->
-    <script src="FrontEnd/jsMy/compare.js"></script>
+    <script src="FrontEnd/jsMy/comparePassword.js"></script>
     <script src="FrontEnd/jsMy/showPass.js"></script>
     
     <!-- Bootstrap core JavaScript-->
