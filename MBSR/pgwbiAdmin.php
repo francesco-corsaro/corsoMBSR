@@ -64,6 +64,7 @@ $pgwbiScoringPost['sottoscale'],
 "Vitalità"
 
 ]];
+$score=[$pgwbiScoringPre['sample'],$pgwbiScoringPost['sample']];
 //Descprtion how to calculate the scoring
 //collapsable card 
 $calculateScoringDescription = "" ; // !!! MODIFY !!!

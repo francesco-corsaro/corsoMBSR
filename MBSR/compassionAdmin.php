@@ -46,6 +46,20 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
               'Il grafico rappresenta il punteggio globale del test e due sotto dimensioni: "positive" ("Gentilezza verso sé", "Umanità condivisa", "Mindfulness") e "negative"( "Giudizio verso sé","Isolamento" e "Iper-identificazione"). Nella sotto-dimensione negativi i punteggi sono stati invertiti',
               'Compassion'
             );
+            
+                        
+            $score=[$compassion['sample'],$postCompassion['sample'],[
+                "Gentilezza verso sé",
+                "Giudizio verso sé",
+                "Giudizio verso sé R",
+                "Umanità condivisa",
+                "Isolamento",
+                "Isolamento R",
+                "Mindfulness",
+                "Iper-identificazione",
+                "Iper-identificazione R"
+            ]];
+            include 'startbootstrap-sb-admin-2-gh-pages/tableScoreCompassion.php';
             ?>
 
 
@@ -204,6 +218,11 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
 numberPartecipant.donut;
 </script>
 
-    
+     <!-- Page level plugins -->
+  <script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
 </body>
 </html>

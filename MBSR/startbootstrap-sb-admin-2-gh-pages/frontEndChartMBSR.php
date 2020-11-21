@@ -48,7 +48,7 @@
               $edi
             );
             
-           
+           include 'tableScore.php';
             ?>
 
 
@@ -79,7 +79,7 @@
                 <!-- Card Body -->
                 <div class="card-body border-bottom-info">
                   <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="Table1" width="100%" cellspacing="0">
                     <thead>
                       <tr>
                         <th>Dimensione</th>
@@ -118,7 +118,7 @@
                 <!-- Card Content - Collapse -->
                 <div class="collapse border-bottom-info show"     id="collapseCardExample">
                   <div class="card-body">
-                                        <?php echo $calculateScoringDescription ; ?> 
+                                        <?php echo $calculateScoringDescription ; //var_dump($score);?> 
                   </div>
                 </div>
               </div>
@@ -151,6 +151,12 @@
 
     <!-- Page level custom scripts -->
     <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script>
+     <!-- Page level plugins -->
+  <script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
     
 
     

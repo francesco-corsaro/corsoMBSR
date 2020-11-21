@@ -64,6 +64,7 @@ $avg=[$ffmqScoringPre['sottoscale'],$ffmqScoringPost['sottoscale'],[
 
 ]];
 
+$score=[$ffmqScoringPre['sample'],$ffmqScoringPost['sample']];
 //Descprtion how to calculate the scoring
 //collapsable card 
 $calculateScoringDescription = "Some researchers divide the total in each category by the number of items in that category to get

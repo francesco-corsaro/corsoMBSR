@@ -63,6 +63,7 @@ $mspScoringPost['sottoscale'],[
 
 ]];
 
+$score=[$mspScoringPre['sample'],$mspScoringPost['sample']];
 //Descprtion how to calculate the scoring
 //collapsable card 
 $calculateScoringDescription = "<strong>CALCOLO DEL PUNTEGGIO COMPLESSIVO:</strong>

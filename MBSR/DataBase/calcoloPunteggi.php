@@ -27,6 +27,7 @@ function compassion_scoring ($tabel,$optRow) {
             $sample[$id]['mindfulness']=($row['Q4i9']+$row['Q4i14']+$row['Q4i17']+$row['Q4i22'])/4;
             $sample[$id]['iperIdentificazione']=($row['Q4i2']+$row['Q4i6']+$row['Q4i20']+$row['Q4i24'])/4;
             $sample[$id]['iperIdentificazioneR']=((6-$row['Q4i2'])+(6-$row['Q4i6'])+(6-$row['Q4i20'])+(6-$row['Q4i24']))/4;
+            $sample[$id]['globale']=(( $sample[$id]['giudizioR'] + $sample[$id]['isolamentoR'] + $sample[$id]['iperIdentificazioneR'] + $sample[$id]['gentilezza'] + $sample[$id]['umanita'] +  $sample[$id]['mindfulness'])/6);
             
             $gentilezzaGlob += $sample[$id]['gentilezza'];
             $giudizioGlob += $sample[$id]['giudizio'];
