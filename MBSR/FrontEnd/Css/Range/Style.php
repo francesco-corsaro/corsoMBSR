@@ -26,7 +26,7 @@ h1{
  line-height: 35px;
  }
  .titolo{
- width:100%;
+ width:50%;
  margin-left:auto;
  margin-right:auto;
  margin-bottom:5%;

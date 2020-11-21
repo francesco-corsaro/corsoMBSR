@@ -81,7 +81,9 @@ $compassion=array(
 			
 			<form action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
     			<div class="tenda vig">	
-    				
+                <div class="col-6 consegna">
+		           <b> Come solitamente tratto me stesso nei momenti difficili</b>
+		        </div>	
     			<?php
     			foreach ($compassion as $chiave=>$testo){
     			    echo '<div class="consegna">
