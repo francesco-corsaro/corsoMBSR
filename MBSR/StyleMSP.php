@@ -56,7 +56,7 @@ h1{
  .roi{
     margin:auto;
     bottom:2%;
-    widht:75%;
+    width:75%;
     font-size:6vw;
     color:black;
     
@@ -64,7 +64,7 @@ h1{
     }   
     @media only screen and (min-width: 760px) {
     .roi{
-    font-size:1.5vw;
+    font-size:1.3vw;
   }
 }
    /*con questo coloro  di azzurro <b> nel <div class=tenda>*/ 
@@ -75,7 +75,7 @@ h1{
     }   
     @media only screen and (min-width: 760px) {
    .color {
-        font-size:1.8vw;
+        font-size:1.3vw;
   }
  }
 .bianco{
@@ -116,12 +116,12 @@ h1{
 }
 @media only screen and (min-width: 600px) {
 .tenda {
-    width: 75%;
-    padding: 2% 3%;
-    top:5%;
-    margin-bottom:3%;
-    margin-left:12.5%;
-    margin-right:12.5%;
+  width: 50%;
+  padding: 2% 3%;
+  top:5%;
+  margin-bottom:3%;
+  margin-left:25%;
+  margin-right:25%;
   }
 }
 .consegna{  
@@ -130,7 +130,7 @@ h1{
  }
      @media only screen and (min-width: 760px) {
    .consegna{
-    font-size:1.5vw;
+    font-size:1.3vw;
      margin-left:12.5%;
   }
 }
@@ -325,7 +325,9 @@ input[type=submit] {
 }
 @media only screen and (min-width: 600px) {
   input[type=submit]  {
-   font-size: 2vw;
+    width: 20%;
+   padding: 1%;
+   font-size: 1.3vw;
   }
 }
 input[type=submit] {

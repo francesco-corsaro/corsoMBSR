@@ -56,7 +56,7 @@ h1{
  .roi{
     margin:auto;
     bottom:2%;
-    widht:75%;
+    width:75%;
     font-size:6vw;
     color:black;
     
