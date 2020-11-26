@@ -43,7 +43,7 @@ function ffmq_scoring ($tabel,$optRow) {
             
             //sub-scale Nonreactivity
             $nonreactivity=($row['Q1i4']+$row['Q1i9']+$row['Q1i19']+$row['Q1i21']+$row['Q1i24']+$row['Q1i29']+$row['Q1i33']);
-            $sample[$id]['nonreactivity']=$nonreactivity/8;
+            $sample[$id]['nonreactivity']=$nonreactivity/7;
             $nonreactivityGlobSam += $sample[$id]['nonreactivity'];
             
             //Total ffmq. add subscale scores and then divide by 39 to get an average item score.
@@ -84,14 +84,18 @@ function ffmq_scoring ($tabel,$optRow) {
 };
 
 
-$ffmqScoringPre = ffmq_scoring ('Ffmq',$edi);
+$ffmqScoringPre = ffmq_scoring ('FfmqPSP',$edi);
 $ffmqScoringPost = ffmq_scoring ('PostFfmq',$edi);
 //var_dump($ffmqScoringPost);
 
-/*echo 'Punteggio partecipante con id 4 alla sotto scala describing '.$ffmqScoringPre['sample'][4]['describing'].'<br>';
+echo 'Punteggio partecipante con id 4 alla sotto scala describing '.$ffmqScoringPre['sample'][4]['describing'].'<br>';
+echo 'Punteggio partecipante con id 4 punteggio totale '.$ffmqScoringPre['sample'][4]['totalFfmq'].'<br>';
 echo 'punteggio media del campione alla sottoscala describing '.$ffmqScoringPre['sottoscale']['describingGlobSam'].'<br>';
-echo 'Punteggio totale del campione ' .$ffmqScoringPre['totalFfmqGlobSam'];*/
+echo 'Punteggio totale del campione ' .$ffmqScoringPre['totalFfmqGlobSam'];
 
+foreach ($ffmqScoringPre['sample'][4] as $key =>$value) {
+   echo 'Dimensione: '.$key.' punteggio: '.$value.'<br>' ;
+}
 
 function arraying($x){
 
