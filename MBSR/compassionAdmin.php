@@ -1,5 +1,10 @@
 <?php 
 session_start();
+$frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
+
+if ($_SESSION['bypass']!==$frontEndAdmin) {
+    header('Location: https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php') ;
+}
 $edi=$_GET['edition']; //get the variable to select the edition of the course
 include 'DataBase/calcoloPunteggi.php'; //It's a program that get scoring of the test compassion
 require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that sets tag html to build a barchart
