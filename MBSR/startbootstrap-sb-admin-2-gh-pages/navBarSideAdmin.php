@@ -66,8 +66,8 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Charts</span>
+        <i class="fas fa-fw fa-chart-bar"></i>
+        <span>Risultati</span>
     </a>
     <div id="collapsePages1" class="collapse" aria-labelledby="headingPages1" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
@@ -84,7 +84,7 @@
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="#">
         <i class="fas fa-fw fa-table"></i>
         <span>Tables</span></a>
 </li>
