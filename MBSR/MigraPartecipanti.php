@@ -1,4 +1,7 @@
 <?php
+for ($i = 0; $i < 35; $i++) {
+    
+
 $sample=array();
 $servername = "localhost";
 $username = "mindfulquestionnaire";
@@ -15,7 +18,7 @@ if ($conn->connect_error) {
     $stato3= "Connesso";
 }
 
-$sql = "SELECT * FROM AnagraficaPSP WHERE Id='1'";
+$sql = "SELECT * FROM AnagraficaPSP WHERE Id='$i'";
 
 $result = $conn->query($sql);
 
@@ -23,7 +26,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $id=$row["Id"];
-        $sample[$id]=[$row['data'],$id, $row['Email'], $row["Nome"], $row["Cognome"], $row['Genere'], $row['Eta'], $row['Password']] ;
+        $sample=[$row['data'],$id, $row['Email'], $row["Nome"], $row["Cognome"], $row['Genere'], $row['Eta'], $row['Password']] ;
     }
 } else {
     echo "0 results";
@@ -46,8 +49,8 @@ if ($conn->connect_error) {
     $stato3= "Connesso";
 }
 
-$sql = "INSERT INTO Anagrafica (Email, Nome, Cognome, Genere, Eta, Password , professione, anni_esperienza,ex_corsista)
-VALUES ('".$sample[1][2]."', '".$sample[1][3]."', '".$sample[1][4]."', '".$sample[1][5]."', '".$sample[1][6]."', '".$sample[1][7]."','impiegato', '0' ,'1' )";
+$sql = "INSERT INTO Anagrafica (Email,Id , Nome, Cognome, Genere, Eta, Password , professione, anni_esperienza,ex_corsista)
+VALUES ('".$sample[2]."', '".$sample[1]."','".$sample[3]."', '".$sample[4]."', '".$sample[5]."', '".$sample[6]."', '".$sample[7]."', 'ND', '0' ,'0' )";
 
 
 
@@ -58,5 +61,10 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
+
+
+echo '<br>';
+}
 ?>
 

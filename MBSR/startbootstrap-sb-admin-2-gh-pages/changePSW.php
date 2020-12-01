@@ -94,7 +94,7 @@
                                     </div>    
                                    
                                 </div><hr><hr>
-                                <input type="submit" id="submit" class="btn btn-primary btn-user btn-block " value="Registra Account">
+                                <input type="submit" id="submit" class="btn btn-primary btn-user btn-block " value="Cambia password">
                 
                                 
                                 

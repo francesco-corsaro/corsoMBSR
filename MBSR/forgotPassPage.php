@@ -24,7 +24,7 @@ if (!empty(htmlspecialchars($_POST['email']))) {
         
         $corpo='<div style="width: inherit;background-color: #f5f5dc;padding: 20px; text-align: center;">
                 <h3 style="text-align: center;">Corso MBSR</h3>
-                <p>Gentile corsista,<br>ti inviamo questa email perchè hai richeitso di cambiare la password.<br>Clicca sul pulsante in basso per procedere</p>
+                <p>Gentile corsista,<br>ti inviamo questa email perchè hai richiesto di cambiare la password.<br>Clicca sul pulsante in basso per procedere</p>
                 
                     
                     <a href="https://mindfulquestionnaire.altervista.org/MBSR/changePSWPage.php" style="  cursor: pointer;font-size: .8rem; border-radius: 10rem; padding: .75rem 1rem; display: block;width: 100%;color: #fff; background-color: #4e73df; border-color: #4e73df;text-align: center; vertical-align: middle;user-select: none;border: 1px solid transparent;line-height: 1.5;box-sizing: border-box;">Reset Password</a>

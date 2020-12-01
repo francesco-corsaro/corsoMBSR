@@ -220,3 +220,19 @@ $frontEndAdmin=$_SESSION['bypass'];
          }
     ?>
         <!-- End of Topbar -->
+
+        <?php
+echo'<script>
+  
+var w = window.innerWidth;
+var h = window.innerHeight;
+if (w < h) {
+
+    var element = document.getElementById("page-top");
+    element.classList.add("sidebar-toggled");
+    var elmnt1= document.getElementById("accordionSidebar");
+    elmnt1.classList.add("toggled");
+}
+
+</Script>';
+?>
