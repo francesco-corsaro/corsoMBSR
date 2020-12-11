@@ -133,7 +133,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
         $identif=$row['Id'];
-        if ($identif!=1 || $identif!=25) {
+        $surname=$row['Cognome'];
+        //($identif!=='30' || $identif!=='31' || $identif!=='1')
+        if ($surname!= 'utente' && $surname!= 'cambiopwd' && $surname!= 'demo'  ) {
             
         
         echo "<tr>
