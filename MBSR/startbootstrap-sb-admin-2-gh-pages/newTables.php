@@ -138,8 +138,8 @@ if ($result->num_rows > 0){
         if ($surname!= 'utente' && $surname!= 'cambiopwd' && $surname!= 'demo'  ) {
             
         
-        echo "<tr>
-                <td style=\"background-color:rgb(220,220,220,0.30); \">".$i."</td>
+        echo "<tr class=\"hov\" >
+        <td style=\"background-color:rgb(220,220,220,0.30); \"  >".$i." <button type=\"button\"  class=\"btn\" data-toggle=\"modal\" data-target=\"#DeleteModal\" data-whatever=\"".$identif."\" data-cog=\"".ucfirst($row['Cognome'])."\" data-name=\"".ucfirst($row['Nome'])."\"><i class=\"fas fa-trash-alt\"></i></button></td>
                 <td>".$row['Nome']."</td>
                 <td>".$row['Cognome']."</td>
                 <td>".$row['data']."</td>
@@ -193,7 +193,37 @@ if ($result->num_rows > 0){
     
    </div>
    <!--         End of Page Wrapper -->
-          
+      <!-- Modal to delete -->
+   <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <form method="POST" action="<?php $_SERVER['PHP_SELF']?>">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Per confermare l'eliminazione, digita <span class="font-italic">elimina</span> nel campo</label>
+                            <input type="text" class="form-control" id="recipient-delete" required>
+                            <input type="hidden" class="recipient form-control" id="recipient-wh">
+                            <input type="hidden" class="name form-control" id="recipient-name">
+                            <input type="hidden" class="cogno form-control" id="recipient-cogno">
+                        </div>
+
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-primary" id="btn-delete" disabled>Elimina</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>    
     
      <!-- Bootstrap core JavaScript-->
      <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
@@ -211,6 +241,35 @@ if ($result->num_rows > 0){
 
   <!-- Page level custom scripts -->
   <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
+
+  <!-- jquery and javascript for the DeleteModal -->
+  <script>
+        $('#DeleteModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('whatever');
+            var imp = button.data('cog');
+            var name = button.data('name') // Extract info from data-* attributes
+                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this);
+            modal.find('.modal-title').text('Eliminare ' + name + ' ' + imp + ' dalla tabella?');
+            modal.find('.modal-body .recipient').val(recipient);
+        });
+    </script>
+    <script>
+        var elimina = document.getElementById('recipient-delete');
+        var btn_delete= document.getElementById('btn-delete')
+        function confirm_delete() {
+            if (elimina.value=='elimina') {
+                btn_delete.disabled = false;
+            }else{
+                btn_delete.disabled = true;
+            }
+            console.log(elimina.value)
+        };
+        elimina.addEventListener("keyup", confirm_delete);
+
+    </script>
     
 </body>
 </html>
