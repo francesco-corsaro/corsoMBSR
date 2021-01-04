@@ -7,7 +7,7 @@ function ffmq_scoring ($tabel,$optRow) {
     } else {
         $option="";
     }
-    $flag= 1;
+    $flag= 0;
     $sample= array();
     
     require 'ConnectDataBase.php';
@@ -84,9 +84,98 @@ function ffmq_scoring ($tabel,$optRow) {
 };
 
 
-$ffmqScoringPre = ffmq_scoring ('FfmqPSP',$edi);
+$ffmqScoringPre = ffmq_scoring ('Ffmq',$edi);
 $ffmqScoringPost = ffmq_scoring ('PostFfmq',$edi);
-//var_dump($ffmqScoringPost);
+//QUESTA È LA FUNZIONE PER APPAIARE I PUNTEGGI DEI PARTECIPANTI
+$pairedSample=array();
+foreach ($ffmqScoringPost['sample'] as $key => $value) {
+    $pairedSample['pre'][$key]=$ffmqScoringPre['sample'][$key];
+    $pairedSample['post'][$key]=$value;
+};
+
+
+//i seguenti array contengono i punteggi del campione alle sotto scale, 
+//SONO INSERITI SOLO I PARTECIPANTI CHE HANNO FATTO IL PRE E IL POST TEST
+
+foreach ($pairedSample['pre'] as $key => $value) {
+    $punteggiOsservarePre[$key]=$pairedSample['pre'][$key]['observing'];
+    $punteggiOsservarePost[$key]=$pairedSample['post'][$key]['observing'];
+    
+    $punteggiDescriverePre[$key]=$pairedSample['pre'][$key]['describing'];
+    $punteggiDescriverePost[$key]=$pairedSample['post'][$key]['describing'];
+    
+    $punteggiactAwarenessPre[$key]=$pairedSample['pre'][$key]['actAwareness'];
+    $punteggiactAwarenessPost[$key]=$pairedSample['post'][$key]['actAwareness'];
+    
+    $puntegginonjudgingPre[$key]=$pairedSample['pre'][$key]['nonjudging'];
+    $puntegginonjudgingPost[$key]=$pairedSample['post'][$key]['nonjudging'];
+    
+    $puntegginonreactivityPre[$key]=$pairedSample['pre'][$key]['nonreactivity'];
+    $puntegginonreactivityPost[$key]=$pairedSample['post'][$key]['nonreactivity'];
+    
+    $punteggitotalFfmqPre[$key]=$pairedSample['pre'][$key]['totalFfmq'];
+    $punteggitotalFfmqPost[$key]=$pairedSample['post'][$key]['totalFfmq'];
+}
+
+
+function average($param) {
+    $ave=array_sum($param)/count($param);
+    return $ave;
+}
+
+
+//Punteggio medio del campione alle sotto scale
+$mediaCampioneOsservarePre=average($punteggiOsservarePre);
+$mediaCampioneOsservarePost=average($punteggiOsservarePost);
+
+$mediaCampioneDescriverePre=average($punteggiDescriverePre);
+$mediaCampioneDescriverePost=average($punteggiDescriverePost);
+
+$mediaCampioneAwarenessPre=average($punteggiactAwarenessPre);
+$mediaCampioneAwarenessPost=average($punteggiactAwarenessPost);
+
+$mediaCampionenonjudgingPre=average($puntegginonjudgingPre);
+$mediaCampionenonjudgingPost=average($puntegginonjudgingPost);
+
+$mediaCampionenonreactivityPre=average($puntegginonreactivityPre);
+$mediaCampionenonreactivityPost=average($puntegginonreactivityPost);
+
+$mediaCampionetotalFfmqPre=average($punteggitotalFfmqPre);
+$mediaCampionetotalFfmqPost=average($punteggitotalFfmqPost);
+
+//I seguenti array servono per la creazione del grafico a barre
+$sottoDimensioniffmqPre=[$mediaCampioneOsservarePre,$mediaCampioneDescriverePre,$mediaCampioneAwarenessPre,$mediaCampionenonjudgingPre,$mediaCampionenonreactivityPre];
+$sottoDimensioniffmqPost=[$mediaCampioneOsservarePost,$mediaCampioneDescriverePost,$mediaCampioneAwarenessPost,$mediaCampionenonjudgingPost,$mediaCampionenonreactivityPost];
+
+
+    
+
+/*
+ * var_dump($sottoDimensioniffmqPre);echo 'Punteggio sotto scala osservare dal $mediaCampioneOsservarePre <br>';
+var_dump($ffmqScoringPre['sottoscale']);echo 'Punteggio sotto scala osservare dal $ffmqScoringPre<br>';
+    
+
+ * 
+ * foreach ($ffmqScoringPre['sample'] as $key => $value) {
+    echo 'Punteggio partecipante con id '.$key.'alla sotto scala describing  ffmqScoring '.$ffmqScoringPre['sample'][$key]['describing'].'<br>';
+    echo 'Punteggio partecipante con id '.$key.' alla sotto scala describing  $punteggiDescriverePre[] '.$punteggiDescriverePre[$key].'<br><br><br>';
+    ;
+}
+
+
+var_dump($ffmqScoringPre['sample']);echo ' $ffmqScoringPre<br>';
+var_dump($punteggiOsservarePre);echo ' $punteggiOsservarePre<br>';
+var_dump($punteggiDescriverePre);echo '<br>';
+var_dump($punteggiOsservarePre);echo '<br>';
+var_dump($punteggiOsservarePost);
+
+echo 'Punteggio partecipante con id '.$i.'alla sotto scala describing  ffmqScoring '.$ffmqScoringPre['sample'][$i]['describing'].'<br>';
+echo 'Punteggio partecipante con id '.$i.' alla sotto scala describing  $punteggiDescriverePre[] '.$punteggiDescriverePre[$i].'<br>';
+
+echo '<br>';
+var_dump($pairedSample['pre'][10]);echo ' Questo è il pre test<br>';
+var_dump($pairedSample['post'][10]);
+
 
 echo 'Punteggio partecipante con id 4 alla sotto scala describing '.$ffmqScoringPre['sample'][4]['describing'].'<br>';
 echo 'Punteggio partecipante con id 4 punteggio totale '.$ffmqScoringPre['sample'][4]['totalFfmq'].'<br>';
@@ -96,7 +185,7 @@ echo 'Punteggio totale del campione ' .$ffmqScoringPre['totalFfmqGlobSam'];
 foreach ($ffmqScoringPre['sample'][4] as $key =>$value) {
    echo 'Dimensione: '.$key.' punteggio: '.$value.'<br>' ;
 }
-
+*/
 function arraying($x){
 
 
