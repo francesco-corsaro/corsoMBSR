@@ -53,6 +53,13 @@ $conn->close();
       width: 100%;
       border-radius: 35rem;
     }
+    .hov{
+      background-color: inherit;
+
+    }
+    .hov:hover{
+      background-color: rgb(220,220,220,0.30);
+    }
   </style>
 </head>
 <body id="page-top">
@@ -75,6 +82,7 @@ $conn->close();
         <div class="row">
 
           <div class="col-xl-8 col-lg-7">
+          <?php echo $checkDelete;?>
             <!-- here insert login form -->
             <div class="card shadow mb-4  border-bottom-info">
                   <!-- Card Header - Dropdown --><?php require 'DataBase/selectEdizioni.php'; ?>
@@ -140,8 +148,8 @@ if ($result->num_rows > 0){
         
         echo "<tr class=\"hov\" >
         <td style=\"background-color:rgb(220,220,220,0.30); \"  >".$i." <button type=\"button\"  class=\"btn\" data-toggle=\"modal\" data-target=\"#DeleteModal\" data-whatever=\"".$identif."\" data-cog=\"".ucfirst($row['Cognome'])."\" data-name=\"".ucfirst($row['Nome'])."\"><i class=\"fas fa-trash-alt\"></i></button></td>
-                <td>".$row['Nome']."</td>
-                <td>".$row['Cognome']."</td>
+                <td>".ucfirst($row['Nome'])."</td>
+                <td>".ucfirst($row['Cognome'])."</td>
                 <td>".$row['data']."</td>
                 <td>".$row['edizione']."</td>
                 <td>".$pretest[$identif]."</td>

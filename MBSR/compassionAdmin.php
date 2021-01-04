@@ -42,14 +42,15 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
           <div class="col-xl-8 col-lg-7">
             <!-- here insert barchart -->
             <?php 
-            drawBarChart("Scoring Sub-scales Compassion", "Nelle sotto dimensioni \"Giudizio verso sé\",\"Isolamento\" e \"Iper-identificazione\" i punteggi non sono stati invertiti", "CompassionSubScale");
+            drawBarChart("Scoring Sub-scales Compassion", "Nelle sotto dimensioni \"Giudizio verso sé\",\"Isolamento\" e \"Iper-identificazione\" i punteggi non sono stati invertiti", "CompassionSubScale", $edi);
             ?>
 
             <?php 
             drawBarChart(
               'Scoring Compassion and Negative/positive Subscales',
               'Il grafico rappresenta il punteggio globale del test e due sotto dimensioni: "positive" ("Gentilezza verso sé", "Umanità condivisa", "Mindfulness") e "negative"( "Giudizio verso sé","Isolamento" e "Iper-identificazione"). Nella sotto-dimensione negativi i punteggi sono stati invertiti',
-              'Compassion'
+              'Compassion',
+              $edi
             );
             
                         
