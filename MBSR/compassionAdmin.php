@@ -169,7 +169,7 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
   </div>
             <!-- End of Page Wrapper -->
 
-            <!-- Script per la tabella con i punteggi e il t-test-->
+            <!-- Script per la tabella di destra con i punteggi e il t-test-->
 <script src="//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script>
         let tbl= document.getElementById('Table1');
@@ -319,20 +319,18 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
 
     //draw a bar cchart for subscale's compassion
     var subScalesCompassion = new creaGrafico(
-      [<?php arraying($selezioneMediaSottoDimensioni[0]);?>],
-        [<?php arraying($selezioneMediaSottoDimensioni[1]);?>],
-        [<?php arraying($nomeDimensioni);?>],
+      [<?php arraying($selezioneMediaSottoDimensioni[0]); ?>],
+        [<?php arraying($selezioneMediaSottoDimensioni[1]); ?>],
+        [<?php arraying($nomeDimensioni); ?>],
         document.getElementById("CompassionSubScale")
         );
 
     subScalesCompassion.barChart;
 
     var compassion = new creaGrafico(
-      [<?php echo $compassion['compassioneGlob'].','.$compassion['dimensionePos'].','.$compassion['dimensioneNegat']; ?>],
-      [<?php echo $postCompassion['compassioneGlob'].','.$compassion['dimensionePos'].','.$compassion['dimensioneNegat']; ?>],
-      ["Compassione di Sè globale",
-          "Scala dimensioni positive",
-          "Scala dimensioni negative"],
+      [<?php arraying($selezioneMedieGenPosNeg[0]);?>],
+      [<?php arraying($selezioneMedieGenPosNeg[1]);?>],
+      [<?php arraying_str($nomeDimensioniGenPosNeg);?>],
       document.getElementById("Compassion")
 
                 );

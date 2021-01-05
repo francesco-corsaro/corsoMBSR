@@ -94,6 +94,16 @@ function arraying($x){
         
     }
 }
+function arraying_str($x){
+
+
+    foreach ($x as $key => $value) {
+        
+        echo "'".$value."',";
+        
+        
+    }
+}
 
 require 'Utility/paired.php'; //  contiene la funzione per appaiare i partecipanti = paired_sample()
 $pairedSample = paired_sample($compassion['sample'], $postCompassion['sample']);
@@ -113,6 +123,8 @@ $mediaSottoDimensioni=medie_sottodimensioni($sottoDimensioni);
 // le creazione del grafico, ovvero la funzione barChart()
 $selezioneMediaSottoDimensioni=array();
 $nomeDimensioni= array();
+$selezioneMedieGenPosNeg=array();
+$nomeDimensioniGenPosNeg=array();
 $i=0;
 foreach ($mediaSottoDimensioni as $key => $value){
     foreach ($mediaSottoDimensioni[$key] as $key2 => $value){
@@ -134,6 +146,9 @@ foreach ($mediaSottoDimensioni as $key => $value){
     }
 }
 /*
+var_dump($selezioneMedieGenPosNeg);echo'<br>';
+arraying($selezioneMedieGenPosNeg[1]);
+
  * foreach ($postCompassion['sample'] as $key => $value) {
     echo $postCompassion['sample'][$key]['mindfulness'];echo '<br>';
     echo $pairedSample['post'][$key]['mindfulness'];echo '<br>';echo '<br>';
