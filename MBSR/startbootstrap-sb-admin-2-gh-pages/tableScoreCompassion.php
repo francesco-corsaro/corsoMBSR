@@ -38,7 +38,7 @@
                           echo '<th>'.$value.'</th>';
                       }
                       ?>
-                      <th>Totale</th>
+                      
                     </tr>
                   </thead>
                   <tfoot>
@@ -55,7 +55,7 @@
                           echo '<th>'.$value.'</th>';
                       }
                       ?>
-                     <th>Totale</th>
+                     
                     </tr>
                   </tfoot>
                   <tbody>
