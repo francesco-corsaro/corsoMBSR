@@ -195,6 +195,15 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
         var n = [<?php arraying($sottoDimensioni[0]['isolamento']);?>];
         var o = [<?php arraying($sottoDimensioni[1]['isolamento']);?>];
 
+        var p = [<?php arraying($sottoDimensioni[0]['globale']);?>];
+        var q = [<?php arraying($sottoDimensioni[1]['globale']);?>];
+
+        var r = [<?php arraying($sottoDimensioni[0]['scalePos']);?>];
+        var s = [<?php arraying($sottoDimensioni[1]['scalePos']);?>];
+
+        var t = [<?php arraying($sottoDimensioni[0]['scaleNeg']);?>];
+        var u = [<?php arraying($sottoDimensioni[1]['scaleNeg']);?>];
+
 
 
         function t_test(a, b) {
@@ -253,7 +262,11 @@ require "startbootstrap-sb-admin-2-gh-pages/barChart.php"; //get a function that
         let result4= t_test(g,h);
         let result5= t_test(l,m);
         let result6= t_test(n,o);
-        let obj={'gentilezza': result1, 'giudizio' : result2, 'umanita' : result3,'mindfulness': result4, 'iperIdentificazione' : result5, 'isolamento' : result6,};
+        let result7= t_test(p,q);
+        let result8= t_test(r,s);
+        let result9= t_test(t,u);
+
+        let obj={'gentilezza': result1, 'giudizio' : result2, 'umanita' : result3,'mindfulness': result4, 'iperIdentificazione' : result5, 'isolamento' : result6, 'globale' : result7, 'scalePos' : result8, 'scaleNeg': result9};
 
         
     </script>

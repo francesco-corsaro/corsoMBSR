@@ -145,6 +145,8 @@ foreach ($mediaSottoDimensioni as $key => $value){
         }
     }
 }
+
+
 /*
 var_dump($selezioneMedieGenPosNeg);echo'<br>';
 arraying($selezioneMedieGenPosNeg[1]);
