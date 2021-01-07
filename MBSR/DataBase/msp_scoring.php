@@ -6,8 +6,9 @@ function msp_scoring ($tabel,$optRow) {
     } else {
         $option="";
     }
-    $flag= 1;
+    $flag= 0; //Questa flag serve a contare i partecipanti
     $sample= array();
+    $complexMsp=0;
     
     require 'ConnectDataBase.php';
     
@@ -20,50 +21,50 @@ function msp_scoring ($tabel,$optRow) {
             
             //sub-scale Perdita di controllo, irritabilità. First storage in array the scoring of single partecipant and then sum the scoring of all partecipants
             
-            $sample[$id]['irritabilita']=($row['Q3i11']+$row['Q3i22']+$row['Q3i32']+$row['Q3i35']+$row['Q3i36']+$row['Q3i46'])/6;
+            $sample[$id]['irritabilita']=($row['Q3i11']+1+$row['Q3i22']+1+$row['Q3i32']+1+$row['Q3i35']+1+$row['Q3i36']+1+$row['Q3i46']+1)/6;
             $irritabilitaGlobSam += $sample[$id]['irritabilita']; //Sum observing scoring of all partecipants
             
             //sub-scale Sensazioni psicofisiologiche:
             
-            $sample[$id]['psicofiosiologico']=($row['Q3i16']+$row['Q3i25']+$row['Q3i34']+$row['Q3i40'])/4;
+            $sample[$id]['psicofiosiologico']=($row['Q3i16']+1+$row['Q3i25']+1+$row['Q3i34']+1+$row['Q3i40']+1)/4;
             $psicofiosiologicoGlobSam += $sample[$id]['psicofiosiologico'];
             
             //sub-scale Senso di sforzo e di confusione
            
-            $sample[$id]['confusione']=($row['Q3i33']+$row['Q3i37']+$row['Q3i41']+$row['Q3i42'])/4;
+            $sample[$id]['confusione']=($row['Q3i33']+1+$row['Q3i37']+1+$row['Q3i41']+1+$row['Q3i42']+1)/4;
             $confusioneGlobSam += $sample[$id]['confusione'];
             
             //sub-scale Ansia depressiva
         
-            $sample[$id]['depressiva']= ($row['Q3i6']+$row['Q3i13']+$row['Q3i15']+$row['Q3i29'])/4;
+            $sample[$id]['depressiva']= ($row['Q3i6']+1+$row['Q3i13']+1+$row['Q3i15']+1+$row['Q3i29']+1)/4;
             $depressivaGlobSam += $sample[$id]['depressiva'];
             
             //sub-scale Dolori e problemi fisici
             
-            $sample[$id]['dolori']=($row['Q3i12']+$row['Q3i14']+$row['Q3i28'])/3;
+            $sample[$id]['dolori']=($row['Q3i12']+1+$row['Q3i14']+1+$row['Q3i28']+1)/3;
             $doloriGlobSam += $sample[$id]['dolori'];
             
             //sub-scale Iperattività, accelerazione comportamenti
             
-            $sample[$id]['accelerazione']=($row['Q3i26']+$row['Q3i44']+$row['Q3i45'])/3;
+            $sample[$id]['accelerazione']=($row['Q3i26']+1+$row['Q3i44']+1+$row['Q3i45']+1)/3;
             $accelerazioneGlobSam += $sample[$id]['accelerazione'];
             
             //Complessivo msp
             for ($i = 1; $i < 50; $i++) {
                 $chiave='Q3i'.$i.'';
                 if ( $i==22 || $i== 24 || $i==43 || $i== 49) {
-                    $complexMsp= $complexMsp+(4- $row[$chiave]); 
+                    $complexMsp= $complexMsp+(5 - ($row[$chiave] + 1)); 
                     
                 } else {
-                    $complexMsp+= $row[$chiave]; 
+                    $complexMsp+= ($row[$chiave] +1); 
                     
                 }
                                              
             }
             
-            $sample[$id]['totalMsp']=$complexMsp;
+            $sample[$id]['totalMsp']=$complexMsp; // Questo è il punteggio complessivo del partecipante
             
-            $complexMsp=0;
+            $complexMsp=0;// assegno 0 a questa variabile in modo da utilizzarla al prossimo ciclo
             
             $totalMspGlobSam += $sample[$id]['totalMsp'];
             
@@ -102,12 +103,12 @@ function msp_scoring ($tabel,$optRow) {
     
 
 };
-$mspScoringPre = msp_scoring ('Msp');
-
-echo 'Punteggio partecipante con id 4 alla sotto scala irritabilita '.$mspScoringPre['sample'][4]['irritabilita'].'<br>';
+$mspScoringPre = msp_scoring ('Msp',$edi);
+$mspScoringPost = msp_scoring ('PostMsp',$edi);
+/*/echo 'Punteggio partecipante con id 4 alla sotto scala irritabilita '.$mspScoringPre['sample'][4]['irritabilita'].'<br>';
 echo 'Punteggio partecipante con id 4 alla sotto scala totale '.$mspScoringPre['sample'][4]['totalMsp'].'<br>';
 echo 'punteggio media del campione alla sottoscala irritabilita '.$mspScoringPre['sottoscale']['irritabilitaGlobSam'].'<br>';
-echo 'Punteggio totale del campione ' .$mspScoringPre['totalMspGlobSam'];
+echo 'Punteggio totale del campione ' .$mspScoringPre['totalMspGlobSam'];*/
 
 
 function arraying($x){
@@ -121,6 +122,30 @@ function arraying($x){
     }
 }
 
+function arraying_special($x){
+    /* STAMPA A VIDEO I VALORI DI UN ARRAY PER ESSERE UTILIZZATO IN JAVASCRIPT
+    Siccome per la costruzione del primo grafico non mi serve il 
+    il punteggio del 'totalMsp' questa funzione non lo fa stampare*/
 
+
+    foreach ($x as $key => $value) {
+        if ($key != 'totalMsp'){
+            echo $value.",";
+        }
+        
+        
+    }
+}
+
+require 'Utility/paired.php'; //  contiene la funzione per appaiare i partecipanti = paired_sample()
+$pairedSample = paired_sample($mspScoringPre['sample'], $mspScoringPost['sample']);
+//var_dump($pairedSample);
+
+require 'Utility/estraiDimensioni.php'; // chiama la funzione per creare gli array con i punteggi delle sotto dimensioni
+$sottoDimensioni=estrai_dimensioni($pairedSample);
+//var_dump($sottoDimensioni);
+require 'Utility/medie.php'; //calcola la media complessiva alle sottoscale del campione
+$mediaSottoDimensioni=medie_sottodimensioni($sottoDimensioni);
+var_dump($mediaSottoDimensioni);
 
 ?>

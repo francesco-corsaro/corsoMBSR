@@ -1,4 +1,7 @@
 <?php
+//  QUESTO FILE È IN COMPLETO
+
+
 function ffmq_scoring ($tabel) {
     
     $flag= 1;

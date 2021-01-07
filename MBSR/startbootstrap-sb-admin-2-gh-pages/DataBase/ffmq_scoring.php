@@ -118,8 +118,8 @@ foreach ($pairedSample['pre'] as $key => $value) {
 }
 
 
-function average($param) {
-    $ave=array_sum($param)/count($param);
+function average($parm) {
+    $ave=array_sum($parm)/count($parm);
     return $ave;
 }
 
