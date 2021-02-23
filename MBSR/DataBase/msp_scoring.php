@@ -124,6 +124,7 @@ function arraying($x){
 
 function arraying_special($x){
     /* STAMPA A VIDEO I VALORI DI UN ARRAY PER ESSERE UTILIZZATO IN JAVASCRIPT
+    ATTENZIONE!!!! QUESTA FUNZIONE È DEBOLE, PUÒ ESSERE USATA SOLO PER GLI ARRAY DERIVANTI DA mspScoringPre
     Siccome per la costruzione del primo grafico non mi serve il 
     il punteggio del 'totalMsp' questa funzione non lo fa stampare*/
 
@@ -146,6 +147,6 @@ $sottoDimensioni=estrai_dimensioni($pairedSample);
 //var_dump($sottoDimensioni);
 require 'Utility/medie.php'; //calcola la media complessiva alle sottoscale del campione
 $mediaSottoDimensioni=medie_sottodimensioni($sottoDimensioni);
-var_dump($mediaSottoDimensioni);
+//var_dump($mediaSottoDimensioni);
 
 ?>

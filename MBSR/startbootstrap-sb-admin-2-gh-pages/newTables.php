@@ -82,7 +82,7 @@ $conn->close();
         <div class="row">
 
           <div class="col-xl-8 col-lg-7">
-          <?php echo $checkDelete;?>
+            <?php echo $checkDelete;?>
             <!-- here insert login form -->
             <div class="card shadow mb-4  border-bottom-info">
                   <!-- Card Header - Dropdown --><?php require 'DataBase/selectEdizioni.php'; ?>
@@ -106,68 +106,68 @@ $conn->close();
                                     </div>
                                 </div>
                   <div class="card-body">
-                  <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th style="background-color:rgb(220,220,220,0.30); ">N°</th>
-                      <th>Nome</th>
-                      <th>Cognome</th>
-                      <th>Registrazione</th>
-                      <th>Edizione</th>
-                      <th>Pre-Test</th>
-                      <th>Post-Test</th>
-                      
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                    <th style="background-color:rgb(220,220,220,0.30);" >N°</th>
-                      <th>Nome</th>
-                      <th>Cognome</th>
-                      <th>Registrazione</th>
-                      <th>Edizione</th>
-                      <th>Pre-Test</th>
-                      <th>Post-Test</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                  <?php $i=1;
-                  
-                  if($edition!=""){$where="WHERE edizione='$edition'";}
-require 'DataBase/ConnectDataBase.php';
-$sql = "SELECT Id, Nome, Cognome, edizione, data FROM Anagrafica $where ORDER BY Cognome";
-$result = $conn->query($sql);
-if ($result->num_rows > 0){
-    while($row = $result->fetch_assoc()){
-        $identif=$row['Id'];
-        $surname=$row['Cognome'];
-        //($identif!=='30' || $identif!=='31' || $identif!=='1')
-        if ($surname!= 'utente' && $surname!= 'cambiopwd' && $surname!= 'demo'  ) {
-            
-        
-        echo "<tr class=\"hov\" >
-        <td style=\"background-color:rgb(220,220,220,0.30); \"  >".$i." <button type=\"button\"  class=\"btn\" data-toggle=\"modal\" data-target=\"#DeleteModal\" data-whatever=\"".$identif."\" data-cog=\"".ucfirst($row['Cognome'])."\" data-name=\"".ucfirst($row['Nome'])."\"><i class=\"fas fa-trash-alt\"></i></button></td>
-                <td>".ucfirst($row['Nome'])."</td>
-                <td>".ucfirst($row['Cognome'])."</td>
-                <td>".$row['data']."</td>
-                <td>".$row['edizione']."</td>
-                <td>".$pretest[$identif]."</td>
-                <td>".$postest[$identif]."</td>
-                
-               </tr>";
-        }
-        $i++;
-    }
-}
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th style="background-color:rgb(220,220,220,0.30); ">N°</th>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Registrazione</th>
+                            <th>Edizione</th>
+                            <th>Pre-Test</th>
+                            <th>Post-Test</th>
+                            
+                          </tr>
+                        </thead>
+                        <tfoot>
+                          <tr>
+                          <th style="background-color:rgb(220,220,220,0.30);" >N°</th>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Registrazione</th>
+                            <th>Edizione</th>
+                            <th>Pre-Test</th>
+                            <th>Post-Test</th>
+                          </tr>
+                        </tfoot>
+                        <tbody>
+                          <?php $i=1;
+                          
+                          if($edition!=""){$where="WHERE edizione='$edition'";}
+                            require 'DataBase/ConnectDataBase.php';
+                            $sql = "SELECT Id, Nome, Cognome, edizione, data FROM Anagrafica $where ORDER BY Cognome";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    $identif=$row['Id'];
+                                    $surname=$row['Cognome'];
+                                    //($identif!=='30' || $identif!=='31' || $identif!=='1')
+                                    if ($surname!= 'utente' && $surname!= 'cambiopwd' && $surname!= 'demo'  ) {
+                                        
+                                    
+                                    echo "<tr class=\"hov\" >
+                                    <td style=\"background-color:rgb(220,220,220,0.30); \"  >".$i." <button type=\"button\"  class=\"btn\" data-toggle=\"modal\" data-target=\"#DeleteModal\" data-whatever=\"".$identif."\" data-cog=\"".ucfirst($row['Cognome'])."\" data-name=\"".ucfirst($row['Nome'])."\"><i class=\"fas fa-trash-alt\"></i></button></td>
+                                            <td>".ucfirst($row['Nome'])."</td>
+                                            <td>".ucfirst($row['Cognome'])."</td>
+                                            <td>".$row['data']."</td>
+                                            <td>".$row['edizione']."</td>
+                                            <td>".$pretest[$identif]."</td>
+                                            <td>".$postest[$identif]."</td>
+                                            
+                                          </tr>";
+                                    }
+                                    $i++;
+                                }
+                            }
 
-?>
+                            ?>
 
-                  </tbody>
-                </table>
-              </div>
+                          </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
+            </div>
 
 
 
@@ -180,16 +180,12 @@ if ($result->num_rows > 0){
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Calendario</h6>
                 </div>
-                
-
                 <!-- Card Body -->
                 <div class="card-body">
                   <?php include "calendar.php" ; ?>              
                 </div>
               </div>
-
-              
-            </div>
+          </div>
 
 
         </div>

@@ -4,6 +4,8 @@
     if ($_SESSION['bypass']!==$frontEndAdmin) {
         header('Location: https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php') ;
     }
+
+    $risultati='active';
 ?>
 <!DOCTYPE html>
 <html lang="it">

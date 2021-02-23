@@ -8,7 +8,7 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <a class="nav-link collapsed <?php echo $corso; ?>" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
         <span>Corso</span>
     </a>
@@ -23,7 +23,7 @@
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+    <a class="nav-link collapsed <?php echo $iscrizioni; ?>" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-wrench"></i>
         <span>Partecipanti</span>
     </a>
@@ -65,7 +65,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
+    <a class="nav-link collapsed <?php echo $risultati; ?>" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
         <i class="fas fa-fw fa-chart-bar"></i>
         <span>Risultati</span>
     </a>
@@ -83,8 +83,8 @@
 </li>
 
 <!-- Nav Item - Tables -->
-<li class="nav-item">
-    <a class="nav-link" href="#">
+<li class="nav-item <?php echo $grezzi;?>">
+    <a class="nav-link" href="https://mindfulquestionnaire.altervista.org/MBSR/tablePntGrezzi.php">
         <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a>
+        <span>Punteggi Grezzi</span></a>
 </li>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 $frontEndAdmin='jhbfjJHBHjh8907jHKiUHUu';
+$corso='active';
 
 if ($_SESSION['bypass']!==$frontEndAdmin) {
     header('Location: https://mindfulquestionnaire.altervista.org/MBSR/paginaIniziale.php') ;
