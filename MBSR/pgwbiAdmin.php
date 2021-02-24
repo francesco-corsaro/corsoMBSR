@@ -71,9 +71,22 @@ $calculateScoringDescription = "" ; // !!! MODIFY !!!
 
 ///////////////////////////////////////
 
-//      INCLUDE THE FRONT END
+///////////////////////////////////////////////
+/// Qui impostiamo l'url per visualizzare ////
+/// la tabella con le medie e il t-test   ////
+/// in un altra finestra                  ////
+$goto='pgwbiNewWindow.php';             ////
+//////////////////////////////////////////////  
+///////////////////////////////////////
 
+//      INCLUDE THE FRONT END
+if ($popUp==true) {
+  // questo apre il frontend per visualizzare solo la tabella
+  // con le medie e il t-test
+  include "startbootstrap-sb-admin-2-gh-pages/popUpResultTable.php";
+}else{
 include "startbootstrap-sb-admin-2-gh-pages/frontEndChartMBSRjs.php";
+}
 
 
 ?>

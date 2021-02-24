@@ -20,60 +20,26 @@ $risultati='active';
   
 
   <title>Compassion chart</title>
-  <style>
-  .zoommer{
-    color: grey;
-    float: left;
-    cursor: pointer;
-    /* position: absolute;
-    top:6;
-    left: 2;*/
-  }
-  .zoommer:hover{
-    /*background-color:#4e73df;*/
-    color:#4e73df;    
-  }
-  </style>
+  
 
 </head>
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-    <!-- begin navbar -->
-    <?php require "startbootstrap-sb-admin-2-gh-pages/navbar.php" ?>
-
-      <!-- End of Topbar -->
+    
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Scala della Compassione di Sé</h1>
-        <p class="mb-4">Reference:  Petrocchi, N., Ottaviani, C., & Couyoumdjian, A. (2014). Dimensionality of self-compassion: translation and construct validation of the self-compassion scale in an Italian sample. Journal Of Mental Health, 23(2), 72-77. Please visit the <a target="_blank" href="http://dx.doi.org/10.3109/09638237.2013.841869">official article http://dx.doi.org/10.3109/09638237.2013.841869</a>.</p>
+        
 
         <!-- Content Row -->
         <div class="row">
 
-          <div class="col-xl-8 col-lg-7">
-            <!-- here insert barchart -->
             <?php 
-           drawBarChart(
-            "Scoring Sub-scales Compassion",
-            "Nelle sotto dimensioni \"Giudizio verso sé\",\"Isolamento\" e \"Iper-identificazione\" i punteggi non sono stati invertiti", 
-            "CompassionSubScale",
-             $edi
-           );
-            ?>
-
-            <?php 
-            drawBarChart(
-              'Scoring Compassion and Negative/positive Subscales',
-              'Il grafico rappresenta il punteggio globale del test e due sotto dimensioni: "positive" ("Gentilezza verso sé", "Umanità condivisa", "Mindfulness") e "negative"( "Giudizio verso sé","Isolamento" e "Iper-identificazione"). Nella sotto-dimensione negativi i punteggi sono stati invertiti',
-              'Compassion',
-              $edi
-            );
-            
                         
             $score=[$compassion['sample'],$postCompassion['sample'],[
                 "Gentilezza verso sé",
@@ -89,18 +55,8 @@ $risultati='active';
                 "Scale Pos.",
                 "Scale Neg."
             ]];
-            include 'startbootstrap-sb-admin-2-gh-pages/tableScoreCompassion.php';
             
-            ?>
-
-
-
-          </div>
-
-          <!-- Colonna di destra -->
-          <div class="col-xl-4 col-lg-5">
-              
-                  <?php 
+            
                   $avg=[$compassion['sottoscale'],$postCompassion['sottoscale'],[
                     "Gentilezza verso sé",
                     "Giudizio verso sé",
@@ -109,23 +65,34 @@ $risultati='active';
                     "Mindfulness",
                     "Iper-identificazione"
                     ]];
-
-                    // la seguente variabile indica la path della nuova
-                    // finestra con che mostra solo i punteggi delle medie e t-test
-                    $goto='compassionNewWindow.php'
                     ?>
                 <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3">
-                <div class="row">
-                    <div class="col-sm-11">
-                      <h6 class="m-0 font-weight-bold text-primary">Tabella medie: Scala della Compassione di Sé</h6>
-                    </div>
-                    <div class="col-sm-1 d-flex justify-content-center">
-                      <span class="zoommer"><i id="gotoTable" data-goto="<?php echo $goto; ?>" class="fas fa-search-plus"></i></span>
-                    </div>
-                  </div>
-                </div>
+                <!-- Card Header - Dropdown   -->
+                <?php
+                require 'startbootstrap-sb-admin-2-gh-pages/DataBase/selectEdizioni.php';
+ echo '
+                            <div class="card shadow mb-4  border-bottom-info">
+               
+                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                 <h6 class="m-0 font-weight-bold text-primary">Scala della Compassione di Sé. Edizione: '.($edizioni[$edi][1] ? $edizioni[$edi][1] : 'Tutte le edizioni').'</h6>
+                                 <div class="dropdown no-arrow">
+                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                     </a>
+                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                         <div class="dropdown-header">Edizioni:</div>';
+                                         
+                                         foreach ($edizioni as $k => $value) {
+                                             echo '<a class="dropdown-item" href="'.$_SERVER["PHP_SELF"].'?edition='.$edizioni[$k][0].'">'.$edizioni[$k][1].'</a>';
+                                         }
+                                         
+                                         
+echo'                                         <div class="dropdown-divider"></div>
+                                         <a class="dropdown-item" href="'.$_SERVER["PHP_SELF"].'">Mostra tutte</a>
+                                     </div>
+                                 </div>
+                             </div>';
+                ?>
                 <!-- Card Body -->
                 <div class="card-body border-bottom-info">
                   <div class="table-responsive">
@@ -156,41 +123,8 @@ $risultati='active';
                 </div>
               </div>
 
-              <!-- Collapsable Card Example -->
-              <div class="card shadow mb-4">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Calcolo dei punteggi</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse border-bottom-info show"     id="collapseCardExample">
-                  <div class="card-body">
-                                        I punteggi delle sotto-scale si ottengono calcolando la media delle risposte agli item che compongono ciascuna sotto-scala. Per ottenere il punteggio totale di compassione di sé, invertire i punteggi delle risposte agli item delle sotto-scale giudizio di sé, isolamento e iper-identificazione (cioè, 1 = 5, 2 = 4, 3 = 3. 4 = 2, 5 = 1) – e successivamente calcolare una media totale delle medie di tutte le sotto-scale. Tuttavia, al momento non ci sono dati sufficienti all’utilizzo del punteggio totale (soprattutto in territorio italiano); si preferisce quindi utilizzare le singole sotto-scale o raggruppare le sottoscale positive e le sottoscale negative in due grandi dimensioni .
-                  </div>
-                </div>
-              </div>
-              <!-- Grafico a ciambella -->
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Partecipanti al pre test e al post test</h6>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-                  <div class="chart-pie pt-4">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <hr>
-                  Per una corretta misura delle differenze il campione deve essere uguale sia la pre test che al post test.
-                </div>
-              </div>
-            </div>
-
-
         </div>
-        <!-- Footer -->
-        <?php include "startbootstrap-sb-admin-2-gh-pages/footer.php" ?>
-        <!-- End of Footer -->
+        
 
     </div> <!-- End of Content Wrapper. This wraps all things out the sidebar and starts in "startbootstrap-sb-admin-2-gh-pages/navbar.php" -->
     
@@ -395,20 +329,5 @@ numberPartecipant.donut;
 
   <!-- Page level custom scripts -->
   <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
-
-  <!-- script per aprire una nuova finestra -->
-  <script>
-  let urlTable= document.getElementById('gotoTable');
-  
-  urlTable.addEventListener('click', function(){
-    apriPopUp(urlTable.dataset.goto);
-  })
-  
-  function apriPopUp(indirizzo) {
-    var stile = "top=50, right=150, width=900, height=400, status=no, menubar=no, toolbar=no scrollbars=no";
-    window.open(indirizzo, "", stile)
-
-  };
-</script>
 </body>
 </html>
