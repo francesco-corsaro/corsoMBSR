@@ -93,9 +93,11 @@ Sommare i punteggi degli items: 26, 44, 45 e dividere la somma per 3</li>
 ///////////////////////////////////////
 
 //      INCLUDE THE FRONT END
-
+if ($popUp==true) {
+  include "startbootstrap-sb-admin-2-gh-pages/popUpResultTable.php";
+}else{
 include "startbootstrap-sb-admin-2-gh-pages/frontEndChartMBSRjs.php";
-
+}
 
 ?>
 <!-- Script per la tabella con i punteggi e il t-test-->

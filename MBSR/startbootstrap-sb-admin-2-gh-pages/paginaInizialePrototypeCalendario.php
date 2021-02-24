@@ -81,24 +81,7 @@
 
           <!-- Calendar -->
           <div class="col-xl-4 col-lg-5">
-          <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header bg-gradient-warning py-3">
-                  <h6 class="m-0 font-weight-bold  text-white">Avvisi</h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                <h6 class="m-0 font-weight-bold text-lg">Avviso per partecipanti corso MBSR Ottobre-Novembre 2020:</h6>
-                <p>A seguito di un aggiornamento del sito web, invitiamo i gentili partecipanti a reimpostare la propria password.</p>
-                <div class="my-2"></div>
-                                    <a href="https://mindfulquestionnaire.altervista.org/MBSR/changePSWPage.php" class="btn btn-warning btn-icon-split ">
-                                        <span class="icon text-white-50">
-                      <i class="fas fa-flag"></i>
-                    </span>
-                                        <span class="text">Imposta nuova password</span>
-                                    </a>             
-                </div>
-            </div>
+          
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
