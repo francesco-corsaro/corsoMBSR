@@ -90,10 +90,19 @@ Sommare i punteggi degli items: 12, 14, 28 e dividere la somma per 3</li>
 Sommare i punteggi degli items: 26, 44, 45 e dividere la somma per 3</li>
 </ul>" ; // !!! MODIFY !!!
 
+
+///////////////////////////////////////////////
+/// Qui impostiamo l'url per visualizzare ////
+/// la tabella con le medie e il t-test   ////
+/// in un altra finestra                  ////
+    $goto='mspNewWindow.php';             ////
+//////////////////////////////////////////////  
 ///////////////////////////////////////
 
 //      INCLUDE THE FRONT END
 if ($popUp==true) {
+  // questo apre il frontend per visualizzare solo la tabella
+  // con le medie e il t-test
   include "startbootstrap-sb-admin-2-gh-pages/popUpResultTable.php";
 }else{
 include "startbootstrap-sb-admin-2-gh-pages/frontEndChartMBSRjs.php";
@@ -272,6 +281,7 @@ From here modify php code according with the program to calculate the  scoring o
 
 numberPartecipant.donut;
 </script>
+
 
     
 </body>

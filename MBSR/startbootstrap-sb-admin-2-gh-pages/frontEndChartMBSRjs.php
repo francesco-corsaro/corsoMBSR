@@ -15,7 +15,20 @@
   
 
   <title><?php echo $titlePage ; ?></title>
-
+  <style>
+  .zoommer{
+    color: grey;
+    float: left;
+    cursor: pointer;
+    /* position: absolute;
+    top:6;
+    left: 2;*/
+  }
+  .zoommer:hover{
+    /*background-color:#4e73df;*/
+    color:#4e73df;    
+  }
+  </style>
 </head>
 <body id="page-top">
 
@@ -64,7 +77,14 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tabella medie: <?php echo $titleBodyPage; ?></h6>
+                  <div class="row">
+                    <div class="col-sm-11">
+                      <h6 class="m-0 font-weight-bold text-primary">Tabella medie: <?php echo $titleBodyPage; ?></h6>
+                    </div>
+                    <div class="col-sm-1 d-flex justify-content-center">
+                      <span class="zoommer"><i id="gotoTable" data-goto="<?php echo $goto; ?>" class="fas fa-search-plus"></i></span>
+                    </div>
+                  </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body border-bottom-info">
@@ -158,6 +178,21 @@
 
   <!-- Page level custom scripts -->
   <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
-    
+  
+  <!-- Script per visualizzare i risultati in un altra finestra -->
+<script>
+  let urlTable= document.getElementById('gotoTable');
+  
+  urlTable.addEventListener('click', function(){
+    apriPopUp(urlTable.dataset.goto);
+  })
+  
+  function apriPopUp(indirizzo) {
+    var stile = "top=50, right=150, width=900, height=400, status=no, menubar=no, toolbar=no scrollbars=no";
+    window.open(indirizzo, "", stile)
+
+  };
+</script>
+
 
     
